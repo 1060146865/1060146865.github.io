@@ -95,13 +95,16 @@
 
 &lt;h1 id=&#34;浏览器渲染原理&#34;&gt;浏览器渲染原理:&lt;/h1&gt;
 
-&lt;p&gt;1.浏览器渲染过程：
-- 根据HMTL创建HTML树（DOM）
-- 根据CSS创建CSS树（CSSOM）
-- 将两棵树合并成一颗渲染树（render tree）
-- Layout布局（文档流/盒模型/计算大小和位置）
-- Paint绘制（把边框颜色/文字颜色/阴影等画出来）
-- Compose合成（根据层叠关系展示画面）&lt;/p&gt;
+&lt;p&gt;1.浏览器渲染过程：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;根据HMTL创建HTML树（DOM）&lt;/li&gt;
+&lt;li&gt;根据CSS创建CSS树（CSSOM）&lt;/li&gt;
+&lt;li&gt;将两棵树合并成一颗渲染树（render tree）&lt;/li&gt;
+&lt;li&gt;Layout布局（文档流/盒模型/计算大小和位置）&lt;/li&gt;
+&lt;li&gt;Paint绘制（把边框颜色/文字颜色/阴影等画出来）&lt;/li&gt;
+&lt;li&gt;Compose合成（根据层叠关系展示画面）&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://1060146865.github.io/images/tupian/11.png&#34; alt=&#34;avatar&#34; /&gt;&lt;/p&gt;
 
@@ -111,20 +114,29 @@
 
 &lt;h1 id=&#34;css-动画的两种做法-transition-和-animation&#34;&gt;CSS 动画的两种做法（transition 和 animation）&lt;/h1&gt;
 
-&lt;p&gt;transition是过渡的意思，它只有开始帧和结束帧，中间的过程浏览器用你指定的属性自动完成，你无法自己控制
-- inline元素不支持transition，先变成block
-- 并不是所有属性都能过渡例如：display:none=&amp;gt;block没有办法过渡，一般改为
-visibility:hidden=&amp;gt;visible；&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;transition&lt;/code&gt;是过渡的意思，它只有开始帧和结束帧，中间的过程浏览器用你指定的属性自动完成，你无法自己控制&lt;/p&gt;
 
-&lt;p&gt;animation是动画的意思，它包含多个关键帧，通过控制帧，可以做出复杂的动画
-- 语法
-  - animation：时长 过渡方式 延迟 次数 方向 填充模式 是否暂停 动画名
-  - 时长：1s或1000ms
-  - 过渡方式：跟transition取值一样
-  - 次数：3或2.4或infinite（无穷尽）
-  - 方向：reverse（相反）/alternate（轮流）/alternate-reverse（交替反转）
-  - 填充模式：none/forwards/backwards/both
-  - 是否暂停：paused/running&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;inline元素不支持transition，先变成block&lt;/li&gt;
+&lt;li&gt;并不是所有属性都能过渡例如：display:none=&amp;gt;block没有办法过渡，一般改为
+visibility:hidden=&amp;gt;visible；&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;animation&lt;/code&gt;是动画的意思，它包含多个关键帧，通过控制帧，可以做出复杂的动画&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;语法
+
+&lt;ul&gt;
+&lt;li&gt;animation：时长 过渡方式 延迟 次数 方向 填充模式 是否暂停 动画名&lt;/li&gt;
+&lt;li&gt;时长：1s或1000ms&lt;/li&gt;
+&lt;li&gt;过渡方式：跟transition取值一样&lt;/li&gt;
+&lt;li&gt;次数：3或2.4或infinite（无穷尽）&lt;/li&gt;
+&lt;li&gt;方向：reverse（相反）/alternate（轮流）/alternate-reverse（交替反转）&lt;/li&gt;
+&lt;li&gt;填充模式：none/forwards/backwards/both&lt;/li&gt;
+&lt;li&gt;是否暂停：paused/running&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
