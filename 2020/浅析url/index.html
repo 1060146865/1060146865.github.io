@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="赵凯">
+  
+  
+  
+  <link rel="prev" href="https://1060146865.github.io/2020/css-%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" />
+  
+  <link rel="canonical" href="https://1060146865.github.io/2020/%E6%B5%85%E6%9E%90url/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           浅析URL | 赵凯的博客
+       
+  </title>
+  <meta name="title" content="浅析URL | 赵凯的博客">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/1060146865.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "浅析URL",
+    "headline" : "浅析URL",
+    "description" : " URL  URL(Uniform Resource Locator)：统一资源定位符 URL的组成：协议\x2b域名\x2b端口\x2b路径\x2b查询参数\x2b锚点 URL举例：https:\/\/www.baidu.com\/s?wd=URL\x26amp;rsv_spt=1#5  协议：https ，在Internet中可以使用多种协议，如HTTP，FTP等等。 域名：www.baidu.com 路径：\/s 查询参数：?wd=URL\x26amp;rsv_spt=1 锚点：“#”开始到最后，都是锚点（不在network中显示，只和本地有关） 端口：http的默认端口是80，https的默认端口是443   IP  IP(Internet protocol)：网络协议 IP的两个作用  定位一台设备 定义了如何封装数据，以及和其他设备交流  与IP协议配套使用的还有四个协议  地址解析协议（Address Resolution Protocol，ARP） 逆地址解析协议（Reverse Address Resolution Protocol，RARP） 网际控制报文协议（Internet Control Message Protocol，ICMP） 网际组管理协议（Internet Group Management Protocol，IGMP）   DNS  DNS(Domain Name System):域名系统协议\n 进行主机名到IP地址的转换 主机别名：有些主机的主机名比较复杂，可以为该主机起多个简单易记的别名。应用程序可以调用DNS来获得主机别名对应的规范主机名（不是别名的主机名）及主机的IP地址 负载分配：DNS允许用同一个主机名对应一个IP地址集合。DNS服务器收到该主机名的解析请求时，随机或循环返回地址集合中的一个地址。一些热门网站，可以利用该服务将网站复制到多个服务器上，这些服务器共用同一个域名，从而实现在这些服务器上的负载分配。 方向域名解析：有时某些应用需要将某个IP地址转换为域名，这可以通过方向域来实现。\n域名  域名就是IP的别称，一个域名可以对应不同IP，一个IP可以对应不同域名。\n 域名的结构由若干个分量组成，各分量之间用.隔开\n…….三级域名.二级域名.顶级域名  域名等级\n 国家顶级域名：cn,us 通用顶级域名：com,net,org,int,edu,gov,mil   ",
+    "inLanguage" : "zh-ch",
+    "author" : "赵凯",
+    "creator" : "赵凯",
+    "publisher": "赵凯",
+    "accountablePerson" : "赵凯",
+    "copyrightHolder" : "赵凯",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-05-25 19:36:56 \x2b0800 CST",
+    "dateModified" : "2020-05-25 19:36:56 \x2b0800 CST",
+    "url" : "https:\/\/1060146865.github.io\/2020\/%E6%B5%85%E6%9E%90url\/",
+    "wordCount" : "50",
+    "keywords" : [  "赵凯的博客"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://1060146865.github.io">赵凯的博客</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://1060146865.github.io">赵凯的博客</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">浅析URL</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://1060146865.github.io" rel="author">赵凯</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-05-25 itemprop="datePublished">May 25, 2020</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<h1 id="url">URL</h1>
+
+<ul>
+<li>URL(Uniform Resource Locator)：统一资源定位符</li>
+<li>URL的组成：协议+域名+端口+路径+查询参数+锚点</li>
+<li>URL举例：<a href="https://www.baidu.com/s?wd=URL&amp;rsv_spt=1#5" rel="nofollow noreferrer" target="_blank">https://www.baidu.com/s?wd=URL&amp;rsv_spt=1#5</a>
+
+<ul>
+<li>协议：https ，在Internet中可以使用多种协议，如HTTP，FTP等等。</li>
+<li>域名：www.baidu.com</li>
+<li>路径：/s</li>
+<li>查询参数：?wd=URL&amp;rsv_spt=1</li>
+<li>锚点：“#”开始到最后，都是锚点（不在network中显示，只和本地有关）</li>
+<li>端口：http的默认端口是80，https的默认端口是443</li>
+</ul></li>
+</ul>
+
+<h1 id="ip">IP</h1>
+
+<ul>
+<li>IP(Internet protocol)：网络协议</li>
+<li>IP的两个作用
+
+<ul>
+<li>定位一台设备</li>
+<li>定义了如何封装数据，以及和其他设备交流</li>
+</ul></li>
+<li>与IP协议配套使用的还有四个协议
+
+<ul>
+<li>地址解析协议（Address Resolution Protocol，ARP）</li>
+<li>逆地址解析协议（Reverse Address Resolution Protocol，RARP）</li>
+<li>网际控制报文协议（Internet Control Message Protocol，ICMP）</li>
+<li>网际组管理协议（Internet Group Management Protocol，IGMP）</li>
+</ul></li>
+</ul>
+
+<h1 id="dns">DNS</h1>
+
+<ul>
+<li><p>DNS(Domain Name System):域名系统协议</p>
+
+<ul>
+<li>进行主机名到IP地址的转换</li>
+<li>主机别名：有些主机的主机名比较复杂，可以为该主机起多个简单易记的别名。应用程序可以调用DNS来获得主机别名对应的规范主机名（不是别名的主机名）及主机的IP地址</li>
+<li>负载分配：DNS允许用同一个主机名对应一个IP地址集合。DNS服务器收到该主机名的解析请求时，随机或循环返回地址集合中的一个地址。一些热门网站，可以利用该服务将网站复制到多个服务器上，这些服务器共用同一个域名，从而实现在这些服务器上的负载分配。</li>
+
+<li><p>方向域名解析：有时某些应用需要将某个IP地址转换为域名，这可以通过方向域来实现。</p>
+
+<h1 id="域名">域名</h1></li>
+</ul></li>
+
+<li><p>域名就是IP的别称，一个域名可以对应不同IP，一个IP可以对应不同域名。</p></li>
+
+<li><p>域名的结构由若干个分量组成，各分量之间用.隔开</p>
+
+<pre><code>…….三级域名.二级域名.顶级域名
+</code></pre></li>
+
+<li><p>域名等级</p>
+
+<ul>
+<li>国家顶级域名：cn,us</li>
+<li>通用顶级域名：com,net,org,int,edu,gov,mil</li>
+</ul></li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>赵凯 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://1060146865.github.io/2020/%E6%B5%85%E6%9E%90url/>https://1060146865.github.io/2020/%E6%B5%85%E6%9E%90url/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://1060146865.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://1060146865.github.io/2020/css-%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="prev" rel="prev" title="CSS 知识总结"><i class="iconfont icon-left"></i>&nbsp;CSS 知识总结</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://1060146865.github.io">赵凯</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

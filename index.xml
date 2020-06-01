@@ -1,0 +1,483 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>赵凯的博客 on 赵凯的博客</title>
+    <link>https://1060146865.github.io/</link>
+    <description>Recent content in 赵凯的博客 on 赵凯的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-ch</language>
+    <lastBuildDate>Mon, 25 May 2020 19:36:56 +0800</lastBuildDate>
+    <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>浅析URL</title>
+      <link>https://1060146865.github.io/2020/%E6%B5%85%E6%9E%90url/</link>
+      <pubDate>Mon, 25 May 2020 19:36:56 +0800</pubDate>
+      
+      <guid>https://1060146865.github.io/2020/%E6%B5%85%E6%9E%90url/</guid>
+      <description>
+
+&lt;h1 id=&#34;url&#34;&gt;URL&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;URL(Uniform Resource Locator)：统一资源定位符&lt;/li&gt;
+&lt;li&gt;URL的组成：协议+域名+端口+路径+查询参数+锚点&lt;/li&gt;
+&lt;li&gt;URL举例：&lt;a href=&#34;https://www.baidu.com/s?wd=URL&amp;amp;rsv_spt=1#5&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://www.baidu.com/s?wd=URL&amp;amp;rsv_spt=1#5&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;协议：https ，在Internet中可以使用多种协议，如HTTP，FTP等等。&lt;/li&gt;
+&lt;li&gt;域名：www.baidu.com&lt;/li&gt;
+&lt;li&gt;路径：/s&lt;/li&gt;
+&lt;li&gt;查询参数：?wd=URL&amp;amp;rsv_spt=1&lt;/li&gt;
+&lt;li&gt;锚点：“#”开始到最后，都是锚点（不在network中显示，只和本地有关）&lt;/li&gt;
+&lt;li&gt;端口：http的默认端口是80，https的默认端口是443&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;ip&#34;&gt;IP&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;IP(Internet protocol)：网络协议&lt;/li&gt;
+&lt;li&gt;IP的两个作用
+
+&lt;ul&gt;
+&lt;li&gt;定位一台设备&lt;/li&gt;
+&lt;li&gt;定义了如何封装数据，以及和其他设备交流&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;与IP协议配套使用的还有四个协议
+
+&lt;ul&gt;
+&lt;li&gt;地址解析协议（Address Resolution Protocol，ARP）&lt;/li&gt;
+&lt;li&gt;逆地址解析协议（Reverse Address Resolution Protocol，RARP）&lt;/li&gt;
+&lt;li&gt;网际控制报文协议（Internet Control Message Protocol，ICMP）&lt;/li&gt;
+&lt;li&gt;网际组管理协议（Internet Group Management Protocol，IGMP）&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;dns&#34;&gt;DNS&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;DNS(Domain Name System):域名系统协议&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;进行主机名到IP地址的转换&lt;/li&gt;
+&lt;li&gt;主机别名：有些主机的主机名比较复杂，可以为该主机起多个简单易记的别名。应用程序可以调用DNS来获得主机别名对应的规范主机名（不是别名的主机名）及主机的IP地址&lt;/li&gt;
+&lt;li&gt;负载分配：DNS允许用同一个主机名对应一个IP地址集合。DNS服务器收到该主机名的解析请求时，随机或循环返回地址集合中的一个地址。一些热门网站，可以利用该服务将网站复制到多个服务器上，这些服务器共用同一个域名，从而实现在这些服务器上的负载分配。&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;方向域名解析：有时某些应用需要将某个IP地址转换为域名，这可以通过方向域来实现。&lt;/p&gt;
+
+&lt;h1 id=&#34;域名&#34;&gt;域名&lt;/h1&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;域名就是IP的别称，一个域名可以对应不同IP，一个IP可以对应不同域名。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;域名的结构由若干个分量组成，各分量之间用.隔开&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;…….三级域名.二级域名.顶级域名
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;域名等级&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;国家顶级域名：cn,us&lt;/li&gt;
+&lt;li&gt;通用顶级域名：com,net,org,int,edu,gov,mil&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CSS 知识总结</title>
+      <link>https://1060146865.github.io/2020/css-%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Tue, 19 May 2020 20:25:40 +0800</pubDate>
+      
+      <guid>https://1060146865.github.io/2020/css-%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</guid>
+      <description>
+
+&lt;h1 id=&#34;浏览器渲染原理&#34;&gt;浏览器渲染原理:&lt;/h1&gt;
+
+&lt;p&gt;1.浏览器渲染过程：
+- 根据HMTL创建HTML树（DOM）
+- 根据CSS创建CSS树（CSSOM）
+- 将两棵树合并成一颗渲染树（render tree）
+- Layout布局（文档流/盒模型/计算大小和位置）
+- Paint绘制（把边框颜色/文字颜色/阴影等画出来）
+- Compose合成（根据层叠关系展示画面）&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://1060146865.github.io/images/tupian/11.png&#34; alt=&#34;avatar&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;2.更新的方式&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://1060146865.github.io/images/tupian/22.png&#34; alt=&#34;avatar&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;css-动画的两种做法-transition-和-animation&#34;&gt;CSS 动画的两种做法（transition 和 animation）&lt;/h1&gt;
+
+&lt;p&gt;transition是过渡的意思，它只有开始帧和结束帧，中间的过程浏览器用你指定的属性自动完成，你无法自己控制
+- inline元素不支持transition，先变成block
+- 并不是所有属性都能过渡例如：display:none=&amp;gt;block没有办法过渡，一般改为
+visibility:hidden=&amp;gt;visible；&lt;/p&gt;
+
+&lt;p&gt;animation是动画的意思，它包含多个关键帧，通过控制帧，可以做出复杂的动画
+- 语法
+  - animation：时长 过渡方式 延迟 次数 方向 填充模式 是否暂停 动画名
+  - 时长：1s或1000ms
+  - 过渡方式：跟transition取值一样
+  - 次数：3或2.4或infinite（无穷尽）
+  - 方向：reverse（相反）/alternate（轮流）/alternate-reverse（交替反转）
+  - 填充模式：none/forwards/backwards/both
+  - 是否暂停：paused/running&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>如何用hugo搭建个人博客</title>
+      <link>https://1060146865.github.io/2019/%E5%A6%82%E4%BD%95%E7%94%A8-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Thu, 29 Aug 2019 19:29:40 +0800</pubDate>
+      
+      <guid>https://1060146865.github.io/2019/%E5%A6%82%E4%BD%95%E7%94%A8-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <description>
+
+&lt;h1 id=&#34;1-下载hugo&#34;&gt;1.下载Hugo&lt;/h1&gt;
+
+&lt;p&gt;下载网站:&lt;a href=&#34;https://github.com/gohugoio/hugo/releases/tag/v0.48&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://github.com/gohugoio/hugo/releases/tag/v0.48&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Windows&lt;/code&gt;下载&lt;code&gt;hugo_xxx_Windows-64bit.zip&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;新建一个文件夹解压缩得到一个hugo.exe&lt;/p&gt;
+
+&lt;h1 id=&#34;2-hugo环境变量配置&#34;&gt;2.Hugo环境变量配置&lt;/h1&gt;
+
+&lt;p&gt;将&lt;code&gt;hugo.exe&lt;/code&gt;的地址加到&lt;code&gt;PATH&lt;/code&gt;里&lt;/p&gt;
+
+&lt;p&gt;终端下输入&lt;code&gt;&amp;lt;hugo version&amp;gt;&lt;/code&gt;检验是否配好环境变量&lt;/p&gt;
+
+&lt;h1 id=&#34;3-创建一个新站点&#34;&gt;3.创建一个新站点&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;hugo new site quickstart&lt;/code&gt;这里的&lt;code&gt;quickstart&lt;/code&gt;可以改成其他的名字&lt;/p&gt;
+
+&lt;h1 id=&#34;4-添加主题&#34;&gt;4.添加主题&lt;/h1&gt;
+
+&lt;p&gt;在站点的目录下打开终端执行以下代码:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;cd quickstart&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;git init&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke&lt;/code&gt; 这里是默认主题可以下载其他的主题&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;echo &#39;theme = &amp;quot;ananke&amp;quot;&#39; &amp;gt;&amp;gt; config.toml&lt;/code&gt;如果下载了其他的主题这里的ananke改成其他的主题的名字&lt;/p&gt;
+
+&lt;h1 id=&#34;5-添加内容&#34;&gt;5.添加内容&lt;/h1&gt;
+
+&lt;p&gt;在站点的目录下打开终端执行以下代码:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;hugo new posts/XXXX.md&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;默认文件里会有这些:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;---
+title: &amp;quot;XXXX&amp;quot;
+date: 2019-03-26T08:47:11+01:00
+draft: true
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;hugo server -D&lt;/code&gt;可以预览草稿&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;hugo server&lt;/code&gt;可以预览非草稿&lt;/p&gt;
+
+&lt;p&gt;浏览器打开&lt;code&gt;http://localhost:1313&lt;/code&gt;，可以查看到运行效果&lt;/p&gt;
+
+&lt;p&gt;在站点运行&lt;code&gt;hugo&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;这个&lt;code&gt;hugo&lt;/code&gt;命令执行完后，会生成一个&lt;code&gt;public&lt;/code&gt;文件夹，创建自己的&lt;code&gt;GithubPages&lt;/code&gt;，新建仓库&lt;code&gt;repository&lt;/code&gt;，命名为&lt;code&gt;Username.github.io&lt;/code&gt;，在将&lt;code&gt;public&lt;/code&gt;文件夹内的所有文件推上仓库里就可以了&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>HTML常用标签</title>
+      <link>https://1060146865.github.io/2019/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</link>
+      <pubDate>Mon, 26 Aug 2019 19:25:40 +0800</pubDate>
+      
+      <guid>https://1060146865.github.io/2019/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</guid>
+      <description>
+
+&lt;h1 id=&#34;1-a-标签的用法&#34;&gt;1.&lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt;标签的用法&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt;标签表示超链接，用于从一张页面链接到另一张页面。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; 标签的 href 属性&lt;/p&gt;
+
+&lt;p&gt;它指示链接的目标。可以是网址，路径，伪协议，id。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;网址&lt;code&gt;&amp;lt;a href=&amp;quot;https://baidu.com&amp;quot;&amp;gt;百度&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;路径&lt;code&gt;&amp;lt;a href=&amp;quot;./index.html&amp;quot;&amp;gt;index&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;javascript:代码;&lt;code&gt;&amp;lt;a href=&amp;quot;javascript:;&amp;quot;&amp;gt;空的伪协议&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;id&lt;code&gt;&amp;lt;a href=&amp;quot;#xxx&amp;quot;&amp;gt;xxx&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;邮件链接&lt;code&gt;&amp;lt;a href=&amp;quot;mailto:1060146865@qq.com&amp;quot;&amp;gt;联系我&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;电话链接&lt;code&gt;&amp;lt;a href=&amp;quot;tel:123456789&amp;quot;&amp;gt;123456789&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;target&lt;/code&gt; 属性指定如何展示打开的链接。它可以是在指定的窗口打开，也可以在&lt;code&gt;&amp;lt;iframe&amp;gt;&lt;/code&gt;里面打开。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;a href=&amp;quot;http://foo.com&amp;quot; target=&amp;quot;test&amp;quot;&amp;gt;foo&amp;lt;/a&amp;gt;
+&amp;lt;a href=&amp;quot;http://bar.com&amp;quot; target=&amp;quot;test&amp;quot;&amp;gt;bar&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上面代码中，两个链接都在名叫 &lt;code&gt;test&lt;/code&gt; 的窗口打开。首先点击链接 &lt;code&gt;foo&lt;/code&gt;，浏览器发现没有叫做 &lt;code&gt;test&lt;/code&gt; 的窗口，就新建一个窗口，起名为 &lt;code&gt;test&lt;/code&gt;，在该窗口打开&lt;code&gt;foo.com&lt;/code&gt;。然后，用户又点击链接&lt;code&gt;bar&lt;/code&gt;，由于已经存在&lt;code&gt;test&lt;/code&gt;窗口，浏览器就在该窗口打开&lt;code&gt;bar.com&lt;/code&gt;，取代里面已经打开的&lt;code&gt;foo.com&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;target&lt;/code&gt;属性的值&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;_self：当前窗口打开，这是默认值。&lt;/li&gt;
+&lt;li&gt;_blank：新窗口打开。&lt;/li&gt;
+&lt;li&gt;_parent：上层窗口打开，这通常用于从父窗口打开的子窗口，或者&lt;code&gt;&amp;lt;iframe&amp;gt;&lt;/code&gt;里面的链接。如果当前窗口没有上层窗口，这个值等同于_self。&lt;/li&gt;
+&lt;li&gt;_top：顶层窗口打开。如果当前窗口就是顶层窗口，这个值等同于 _self。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; 标签的 download属性&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;download&lt;/code&gt;属性表明当前链接用于下载，而不是跳转到另一个 &lt;code&gt;URL&lt;/code&gt;。不是所有浏览器都支持，尤其是手机浏览器可能不支持。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;a href=&amp;quot;demo.txt&amp;quot; download&amp;gt;下载&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;2-img-标签的用法&#34;&gt;2.&lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; 标签的用法&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt;标签用于插入图片。它是单独使用的，没有闭合标签。作用是发出一个 get 请求，展示一张图片。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; 标签的属性&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;src属性指定图片的网址。&lt;/li&gt;
+&lt;li&gt;alt属性用来设定图片的文字说明。图片不显示时（比如下载失败，或用户关闭图片加载），图片的位置上会显示该文本。&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;width 属性，height 属性,图片默认以原始大小插入网页，width 属性和 height 属性可以指定图片显示时的宽度和高度，单位是像素或百分比。只设置一个宽度高度会自适应。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;img src=&amp;quot;111.jpg&amp;quot; alt=&amp;quot;图片&amp;quot; width=&amp;quot;400&amp;quot; height=&amp;quot;300&amp;quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;load&lt;/code&gt; 事件，&lt;code&gt;error&lt;/code&gt;事件&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;load&lt;/code&gt; 事件在页面或某个资源加载成功时触发。注意，页面或资源从浏览器缓存加载，并不会触发 load 事件。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;error&lt;/code&gt;事件是在页面或资源加载失败时触发。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    &amp;lt;script&amp;gt;
+      xxx.onload = function() {
+        console.log(&amp;quot;图片加载成功&amp;quot;);
+      };
+      xxx.onerror = function() {
+        console.log(&amp;quot;图片加载失败&amp;quot;);
+        xxx.src = &amp;quot;/404.png&amp;quot;;
+      };
+    &amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;响应式&lt;/p&gt;
+
+&lt;p&gt;不同尺寸的屏幕，显示不同大小的图像&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    &amp;lt;style&amp;gt;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      img {
+        max-width: 100%;
+      }
+    &amp;lt;/style&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;3-table-标签的用法&#34;&gt;3.&lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt; 标签的用法&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt;是一个块级容器标签，所有表格内容都要放在这个标签里面。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;caption&amp;gt;&lt;/code&gt;总是&lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt;里面的第一个子元素，表示表格的标题。该元素是可选的。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;thead&amp;gt;&lt;/code&gt;、&lt;code&gt;&amp;lt;tbody&amp;gt;&lt;/code&gt;、&lt;code&gt;&amp;lt;tfoot&amp;gt;&lt;/code&gt;都是块级容器元素，且都是&lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt;的一级子元素，分别表示表头、表体和表尾。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;tr&amp;gt;&lt;/code&gt;标签表示表格的一行（table row）。如果表格有&lt;code&gt;&amp;lt;thead&amp;gt;&lt;/code&gt;、&lt;code&gt;&amp;lt;tbody&amp;gt;&lt;/code&gt;、&lt;code&gt;&amp;lt;tfoot&amp;gt;&lt;/code&gt;，那么&lt;code&gt;&amp;lt;tr&amp;gt;&lt;/code&gt;就放在这些容器元素之中，否则直接放在&lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt;的下一级。&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;&amp;lt;th&amp;gt;&lt;/code&gt;和&lt;code&gt;&amp;lt;td&amp;gt;&lt;/code&gt;都用来定义表格的单元格。其中，&lt;code&gt;&amp;lt;th&amp;gt;&lt;/code&gt;是标题单元格，&lt;code&gt;&amp;lt;td&amp;gt;&lt;/code&gt;是数据单元格。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;table&amp;gt;
+&amp;lt;thead&amp;gt;
+&amp;lt;tr&amp;gt;
+  &amp;lt;th&amp;gt;&amp;lt;/th&amp;gt;
+  &amp;lt;th&amp;gt;时间&amp;lt;/th&amp;gt;
+  &amp;lt;th&amp;gt;节次&amp;lt;/th&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;/thead&amp;gt;
+&amp;lt;tbody&amp;gt;
+&amp;lt;tr&amp;gt;
+  &amp;lt;th&amp;gt;上午&amp;lt;/th&amp;gt;
+  &amp;lt;td&amp;gt;8.00&amp;lt;/td&amp;gt;
+  &amp;lt;td&amp;gt;第一节&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;tr&amp;gt;
+  &amp;lt;th&amp;gt;上午&amp;lt;/th&amp;gt;
+  &amp;lt;td&amp;gt;9.00&amp;lt;/td&amp;gt;
+  &amp;lt;td&amp;gt;第二节&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;tr&amp;gt;
+  &amp;lt;th&amp;gt;下午&amp;lt;/th&amp;gt;
+  &amp;lt;td&amp;gt;1.00&amp;lt;/td&amp;gt;
+  &amp;lt;td&amp;gt;第三节&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;/tbody&amp;gt;
+&amp;lt;tfoot&amp;gt;
+&amp;lt;tr&amp;gt;
+  &amp;lt;th&amp;gt;晚上&amp;lt;/th&amp;gt;
+  &amp;lt;td&amp;gt;6.00&amp;lt;/td&amp;gt;
+  &amp;lt;td&amp;gt;第四节&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;/tfoot&amp;gt;
+&amp;lt;/table&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;基本样式&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;border-spacing: 0px;&lt;/code&gt;单元格之间的空白量&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;border-collapse: collapse;&lt;/code&gt;单元格之间是否合并&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    &amp;lt;style&amp;gt;
+      table {
+        width: 50;
+        table-layout: auto;
+        border-spacing: 0px;
+        border-collapse: collapse;
+      }
+      td,
+      th {
+        border: 1px solid black;
+      }
+    &amp;lt;/style&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>HTML入门笔记1</title>
+      <link>https://1060146865.github.io/2019/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/</link>
+      <pubDate>Sat, 24 Aug 2019 19:25:40 +0800</pubDate>
+      
+      <guid>https://1060146865.github.io/2019/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/</guid>
+      <description>
+
+&lt;h1 id=&#34;1-html-是谁发明的&#34;&gt;1.HTML 是谁发明的&lt;/h1&gt;
+
+&lt;p&gt;HTML 的全名是“超文本标记语言”（HyperText Markup Language），上个世纪 90 年代由欧洲核子研究中心的物理学家蒂姆·伯纳斯-李（Tim Berners-Lee）发明。它的最大特点就是支持超链接，可以跳转到其他网页，从而构成了整个互联网。1999 年，HTML 4.01 版发布，成为广泛接受的 HTML 标准。2014 年，HTML 5 发布，这是目前正在使用的版本。&lt;/p&gt;
+
+&lt;h1 id=&#34;2-html-起手应该写什么&#34;&gt;2.HTML 起手应该写什么&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+  &amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot; /&amp;gt;
+    &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot; /&amp;gt;
+    &amp;lt;meta http-equiv=&amp;quot;X-UA-Compatible&amp;quot; content=&amp;quot;ie=edge&amp;quot; /&amp;gt;
+    &amp;lt;title&amp;gt;Document&amp;lt;/title&amp;gt;
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body&amp;gt;&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/code&gt;表示文档类型，告诉浏览器如何解析网页。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;&lt;/code&gt;表示网页内容的语言，可以改成zh-CN。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;meta charset=&amp;quot;UTF-8&amp;quot; /&amp;gt;&lt;/code&gt;文件的字符编码。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot; /&amp;gt;&lt;/code&gt;禁用缩放，兼容手机。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;meta http-equiv=&amp;quot;X-UA-Compatible&amp;quot; content=&amp;quot;ie=edge&amp;quot; /&amp;gt;&lt;/code&gt;告诉 IE 使用最新的内核。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;title&amp;gt;Document&amp;lt;/title&amp;gt;&lt;/code&gt;设置网页标题。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;/head&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;body&amp;gt;&amp;lt;/body&amp;gt;&lt;/code&gt;浏览器显示的页面内容。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;/html&amp;gt;&lt;/code&gt;标签是网页的顶层容器，也称为根元素。&lt;/p&gt;
+
+&lt;h1 id=&#34;3-常用的表章节的标签&#34;&gt;3.常用的表章节的标签&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;h1&amp;gt;~&amp;lt;h6&amp;gt;&lt;/code&gt;用来表示文章的标题。按照标题的等级，一共分成六级。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;header&amp;gt;&lt;/code&gt;表示整个网页的头部。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;footer&amp;gt;&lt;/code&gt;网页的的尾部。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;main&amp;gt;&lt;/code&gt;标签表示页面的主体内容。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;article&amp;gt;&lt;/code&gt;标签表示页面里面一段完整的内容。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;aside&amp;gt;&lt;/code&gt;旁支内容。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;section&amp;gt;&lt;/code&gt;表示一个章节。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;是一个通用标签，表示一个区块。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt;表文章的一个段落.&lt;/p&gt;
+
+&lt;h1 id=&#34;4-全局属性&#34;&gt;4.全局属性&lt;/h1&gt;
+
+&lt;p&gt;全局属性（global attributes）是所有元素都可以使用的属性。也就是说，你可以把下面的属性，加在任意一个网页元素上面，不过有些属性对某些元素可能不产生意义。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;id&lt;/code&gt; 属性是元素在网页内的唯一标识符。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;class&lt;/code&gt; 属性用来对网页元素进行分类。如果不同元素的class属性值相同，就表示它们是一类的。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;title&lt;/code&gt;属性用来为元素添加附加说明。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;contenteditable&lt;/code&gt;属性允许用户修改内容。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;hidden&lt;/code&gt;是一个布尔属性，表示当前的网页元素不再跟页面相关，不会在网页中看到它。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;style&lt;/code&gt;属性用来指定当前元素的样式。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;tabindex&lt;/code&gt;可以使用键盘 &lt;code&gt;Tab&lt;/code&gt; 键,选定焦点元素进行下一步操作。&lt;/p&gt;
+
+&lt;h1 id=&#34;5-常用的内容标签&#34;&gt;5.常用的内容标签&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;br&amp;gt;&lt;/code&gt;让网页产生一个换行效果。该标签是单独使用的，没有闭合标签。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;hr&amp;gt;&lt;/code&gt;分隔水平线。该标签是单独使用的，没有闭合标签。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;pre&amp;gt;&lt;/code&gt;是一个块级元素，表示保留原来的格式。只保留空格和换行，不会保留 HTML 标签。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;strong&amp;gt;&lt;/code&gt;加粗显示内容。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;em&amp;gt;&lt;/code&gt;斜体&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;blockquote&amp;gt;&lt;/code&gt;表引用。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;q&amp;gt;&lt;/code&gt;表引用，但不会产生换行。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt;表示标签内容是计算机代码。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;ol&amp;gt;&lt;/code&gt;标签是一个有序列表容器。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;ul&amp;gt;&lt;/code&gt;标签是一个无序列表容器。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;li&amp;gt;&lt;/code&gt;表示列表项，用在&lt;code&gt;&amp;lt;ol&amp;gt;&lt;/code&gt;或&lt;code&gt;&amp;lt;ul&amp;gt;&lt;/code&gt;容器之中。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;dl&amp;gt;，&amp;lt;dt&amp;gt;，&amp;lt;dd&amp;gt;。 &amp;lt;dl&amp;gt;&lt;/code&gt;表示一组术语的列表。术语名由&lt;code&gt;&amp;lt;dt&amp;gt;&lt;/code&gt;标签定义，术语解释由&lt;code&gt;&amp;lt;dd&amp;gt;&lt;/code&gt;标签定义。&lt;code&gt;&amp;lt;dl&amp;gt;&lt;/code&gt;常用来定义词汇表。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt;标签内可以放置链接，文字，段落、图像、多媒体等等。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

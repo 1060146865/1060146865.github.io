@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="赵凯">
+  
+  
+  
+  <link rel="prev" href="https://1060146865.github.io/2019/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/" />
+  <link rel="next" href="https://1060146865.github.io/2019/%E5%A6%82%E4%BD%95%E7%94%A8-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" />
+  <link rel="canonical" href="https://1060146865.github.io/2019/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           HTML常用标签 | 赵凯的博客
+       
+  </title>
+  <meta name="title" content="HTML常用标签 | 赵凯的博客">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/1060146865.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "HTML常用标签",
+    "headline" : "HTML常用标签",
+    "description" : "1.\x26lt;a\x26gt;标签的用法 \x26lt;a\x26gt;标签表示超链接，用于从一张页面链接到另一张页面。\n\x26lt;a\x26gt; 标签的 href 属性\n它指示链接的目标。可以是网址，路径，伪协议，id。\n 网址\x26lt;a href=\x26quot;https:\/\/baidu.com\x26quot;\x26gt;百度\x26lt;\/a\x26gt;\n 路径\x26lt;a href=\x26quot;.\/index.html\x26quot;\x26gt;index\x26lt;\/a\x26gt;\n javascript:代码;\x26lt;a href=\x26quot;javascript:;\x26quot;\x26gt;空的伪协议\x26lt;\/a\x26gt;\n id\x26lt;a href=\x26quot;#xxx\x26quot;\x26gt;xxx\x26lt;\/a\x26gt;\n 邮件链接\x26lt;a href=\x26quot;mailto:1060146865@qq.com\x26quot;\x26gt;联系我\x26lt;\/a\x26gt;\n 电话链接\x26lt;a href=\x26quot;tel:123456789\x26quot;\x26gt;123456789\x26lt;\/a\x26gt;\n  target 属性指定如何展示打开的链接。它可以是在指定的窗口打开，也可以在\x26lt;iframe\x26gt;里面打开。\n\x26lt;a href=\x26quot;http:\/\/foo.com\x26quot; target=\x26quot;test\x26quot;\x26gt;foo\x26lt;\/a\x26gt; \x26lt;a href=\x26quot;http:\/\/bar.com\x26quot; target=\x26quot;test\x26quot;\x26gt;bar\x26lt;\/a\x26gt;  上面代码中，两个链接都在名叫 test 的窗口打开。首先点击链接 foo，浏览器发现没有叫做 test 的窗口，就新建一个窗口，起名为 test，在该窗口打开foo.com。然后，用户又点击链接bar，由于已经存在test窗口，浏览器就在该窗口打开bar.com，取代里面已经打开的foo.com。\ntarget属性的值\n _self：当前窗口打开，这是默认值。 _blank：新窗口打开。 _parent：上层窗口打开，这通常用于从父窗口打开的子窗口，或者\x26lt;iframe\x26gt;里面的链接。如果当前窗口没有上层窗口，这个值等同于_self。 _top：顶层窗口打开。如果当前窗口就是顶层窗口，这个值等同于 _self。  \x26lt;a\x26gt; 标签的 download属性\ndownload属性表明当前链接用于下载，而不是跳转到另一个 URL。不是所有浏览器都支持，尤其是手机浏览器可能不支持。\n\x26lt;a href=\x26quot;demo.txt\x26quot; download\x26gt;下载\x26lt;\/a\x26gt;  2.\x26lt;img\x26gt; 标签的用法 \x26lt;img\x26gt;标签用于插入图片。它是单独使用的，没有闭合标签。作用是发出一个 get 请求，展示一张图片。\n\x26lt;img\x26gt; 标签的属性\n src属性指定图片的网址。 alt属性用来设定图片的文字说明。图片不显示时（比如下载失败，或用户关闭图片加载），图片的位置上会显示该文本。 width 属性，height 属性,图片默认以原始大小插入网页，width 属性和 height 属性可以指定图片显示时的宽度和高度，单位是像素或百分比。只设置一个宽度高度会自适应。",
+    "inLanguage" : "zh-ch",
+    "author" : "赵凯",
+    "creator" : "赵凯",
+    "publisher": "赵凯",
+    "accountablePerson" : "赵凯",
+    "copyrightHolder" : "赵凯",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-08-26 19:25:40 \x2b0800 CST",
+    "dateModified" : "2019-08-26 19:25:40 \x2b0800 CST",
+    "url" : "https:\/\/1060146865.github.io\/2019\/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE\/",
+    "wordCount" : "177",
+    "keywords" : [  "赵凯的博客"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://1060146865.github.io">赵凯的博客</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://1060146865.github.io">赵凯的博客</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">HTML常用标签</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://1060146865.github.io" rel="author">赵凯</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2019-08-26 itemprop="datePublished">August 26, 2019</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<h1 id="1-a-标签的用法">1.<code>&lt;a&gt;</code>标签的用法</h1>
+
+<p><code>&lt;a&gt;</code>标签表示超链接，用于从一张页面链接到另一张页面。</p>
+
+<p><code>&lt;a&gt;</code> 标签的 href 属性</p>
+
+<p>它指示链接的目标。可以是网址，路径，伪协议，id。</p>
+
+<ul>
+<li><p>网址<code>&lt;a href=&quot;https://baidu.com&quot;&gt;百度&lt;/a&gt;</code></p></li>
+
+<li><p>路径<code>&lt;a href=&quot;./index.html&quot;&gt;index&lt;/a&gt;</code></p></li>
+
+<li><p>javascript:代码;<code>&lt;a href=&quot;javascript:;&quot;&gt;空的伪协议&lt;/a&gt;</code></p></li>
+
+<li><p>id<code>&lt;a href=&quot;#xxx&quot;&gt;xxx&lt;/a&gt;</code></p></li>
+
+<li><p>邮件链接<code>&lt;a href=&quot;mailto:1060146865@qq.com&quot;&gt;联系我&lt;/a&gt;</code></p></li>
+
+<li><p>电话链接<code>&lt;a href=&quot;tel:123456789&quot;&gt;123456789&lt;/a&gt;</code></p></li>
+</ul>
+
+<p><code>target</code> 属性指定如何展示打开的链接。它可以是在指定的窗口打开，也可以在<code>&lt;iframe&gt;</code>里面打开。</p>
+
+<pre><code>&lt;a href=&quot;http://foo.com&quot; target=&quot;test&quot;&gt;foo&lt;/a&gt;
+&lt;a href=&quot;http://bar.com&quot; target=&quot;test&quot;&gt;bar&lt;/a&gt;
+</code></pre>
+
+<p>上面代码中，两个链接都在名叫 <code>test</code> 的窗口打开。首先点击链接 <code>foo</code>，浏览器发现没有叫做 <code>test</code> 的窗口，就新建一个窗口，起名为 <code>test</code>，在该窗口打开<code>foo.com</code>。然后，用户又点击链接<code>bar</code>，由于已经存在<code>test</code>窗口，浏览器就在该窗口打开<code>bar.com</code>，取代里面已经打开的<code>foo.com</code>。</p>
+
+<p><code>target</code>属性的值</p>
+
+<ul>
+<li>_self：当前窗口打开，这是默认值。</li>
+<li>_blank：新窗口打开。</li>
+<li>_parent：上层窗口打开，这通常用于从父窗口打开的子窗口，或者<code>&lt;iframe&gt;</code>里面的链接。如果当前窗口没有上层窗口，这个值等同于_self。</li>
+<li>_top：顶层窗口打开。如果当前窗口就是顶层窗口，这个值等同于 _self。</li>
+</ul>
+
+<p><code>&lt;a&gt;</code> 标签的 download属性</p>
+
+<p><code>download</code>属性表明当前链接用于下载，而不是跳转到另一个 <code>URL</code>。不是所有浏览器都支持，尤其是手机浏览器可能不支持。</p>
+
+<pre><code>&lt;a href=&quot;demo.txt&quot; download&gt;下载&lt;/a&gt;
+</code></pre>
+
+<h1 id="2-img-标签的用法">2.<code>&lt;img&gt;</code> 标签的用法</h1>
+
+<p><code>&lt;img&gt;</code>标签用于插入图片。它是单独使用的，没有闭合标签。作用是发出一个 get 请求，展示一张图片。</p>
+
+<p><code>&lt;img&gt;</code> 标签的属性</p>
+
+<ul>
+<li>src属性指定图片的网址。</li>
+<li>alt属性用来设定图片的文字说明。图片不显示时（比如下载失败，或用户关闭图片加载），图片的位置上会显示该文本。</li>
+
+<li><p>width 属性，height 属性,图片默认以原始大小插入网页，width 属性和 height 属性可以指定图片显示时的宽度和高度，单位是像素或百分比。只设置一个宽度高度会自适应。</p>
+
+<pre><code>&lt;img src=&quot;111.jpg&quot; alt=&quot;图片&quot; width=&quot;400&quot; height=&quot;300&quot;&gt;
+</code></pre></li>
+</ul>
+
+<p><code>load</code> 事件，<code>error</code>事件</p>
+
+<p><code>load</code> 事件在页面或某个资源加载成功时触发。注意，页面或资源从浏览器缓存加载，并不会触发 load 事件。</p>
+
+<p><code>error</code>事件是在页面或资源加载失败时触发。</p>
+
+<pre><code>    &lt;script&gt;
+      xxx.onload = function() {
+        console.log(&quot;图片加载成功&quot;);
+      };
+      xxx.onerror = function() {
+        console.log(&quot;图片加载失败&quot;);
+        xxx.src = &quot;/404.png&quot;;
+      };
+    &lt;/script&gt;
+</code></pre>
+
+<p>响应式</p>
+
+<p>不同尺寸的屏幕，显示不同大小的图像</p>
+
+<pre><code>    &lt;style&gt;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      img {
+        max-width: 100%;
+      }
+    &lt;/style&gt;
+</code></pre>
+
+<h1 id="3-table-标签的用法">3.<code>&lt;table&gt;</code> 标签的用法</h1>
+
+<p><code>&lt;table&gt;</code>是一个块级容器标签，所有表格内容都要放在这个标签里面。</p>
+
+<ul>
+<li><code>&lt;caption&gt;</code>总是<code>&lt;table&gt;</code>里面的第一个子元素，表示表格的标题。该元素是可选的。</li>
+<li><code>&lt;thead&gt;</code>、<code>&lt;tbody&gt;</code>、<code>&lt;tfoot&gt;</code>都是块级容器元素，且都是<code>&lt;table&gt;</code>的一级子元素，分别表示表头、表体和表尾。</li>
+<li><code>&lt;tr&gt;</code>标签表示表格的一行（table row）。如果表格有<code>&lt;thead&gt;</code>、<code>&lt;tbody&gt;</code>、<code>&lt;tfoot&gt;</code>，那么<code>&lt;tr&gt;</code>就放在这些容器元素之中，否则直接放在<code>&lt;table&gt;</code>的下一级。</li>
+
+<li><p><code>&lt;th&gt;</code>和<code>&lt;td&gt;</code>都用来定义表格的单元格。其中，<code>&lt;th&gt;</code>是标题单元格，<code>&lt;td&gt;</code>是数据单元格。</p>
+
+<pre><code>&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+  &lt;th&gt;&lt;/th&gt;
+  &lt;th&gt;时间&lt;/th&gt;
+  &lt;th&gt;节次&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+  &lt;th&gt;上午&lt;/th&gt;
+  &lt;td&gt;8.00&lt;/td&gt;
+  &lt;td&gt;第一节&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;th&gt;上午&lt;/th&gt;
+  &lt;td&gt;9.00&lt;/td&gt;
+  &lt;td&gt;第二节&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;th&gt;下午&lt;/th&gt;
+  &lt;td&gt;1.00&lt;/td&gt;
+  &lt;td&gt;第三节&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;tfoot&gt;
+&lt;tr&gt;
+  &lt;th&gt;晚上&lt;/th&gt;
+  &lt;td&gt;6.00&lt;/td&gt;
+  &lt;td&gt;第四节&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tfoot&gt;
+&lt;/table&gt;
+</code></pre></li>
+</ul>
+
+<p>基本样式</p>
+
+<p><code>border-spacing: 0px;</code>单元格之间的空白量</p>
+
+<p><code>border-collapse: collapse;</code>单元格之间是否合并</p>
+
+<pre><code>    &lt;style&gt;
+      table {
+        width: 50;
+        table-layout: auto;
+        border-spacing: 0px;
+        border-collapse: collapse;
+      }
+      td,
+      th {
+        border: 1px solid black;
+      }
+    &lt;/style&gt;
+</code></pre>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>赵凯 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://1060146865.github.io/2019/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/>https://1060146865.github.io/2019/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://1060146865.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://1060146865.github.io/2019/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/" class="prev" rel="prev" title="HTML入门笔记1"><i class="iconfont icon-left"></i>&nbsp;HTML入门笔记1</a>
+         
+        
+        <a href="https://1060146865.github.io/2019/%E5%A6%82%E4%BD%95%E7%94%A8-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="next" rel="next" title="如何用hugo搭建个人博客">如何用hugo搭建个人博客&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://1060146865.github.io">赵凯</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

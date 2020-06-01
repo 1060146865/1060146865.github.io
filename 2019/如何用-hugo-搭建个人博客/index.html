@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="赵凯">
+  
+  
+  
+  <link rel="prev" href="https://1060146865.github.io/2019/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/" />
+  <link rel="next" href="https://1060146865.github.io/2020/css-%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" />
+  <link rel="canonical" href="https://1060146865.github.io/2019/%E5%A6%82%E4%BD%95%E7%94%A8-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           如何用hugo搭建个人博客 | 赵凯的博客
+       
+  </title>
+  <meta name="title" content="如何用hugo搭建个人博客 | 赵凯的博客">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/1060146865.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "如何用hugo搭建个人博客",
+    "headline" : "如何用hugo搭建个人博客",
+    "description" : "1.下载Hugo 下载网站:https:\/\/github.com\/gohugoio\/hugo\/releases\/tag\/v0.48\nWindows下载hugo_xxx_Windows-64bit.zip\n新建一个文件夹解压缩得到一个hugo.exe\n2.Hugo环境变量配置 将hugo.exe的地址加到PATH里\n终端下输入\x26lt;hugo version\x26gt;检验是否配好环境变量\n3.创建一个新站点 hugo new site quickstart这里的quickstart可以改成其他的名字\n4.添加主题 在站点的目录下打开终端执行以下代码:\ncd quickstart\ngit init\ngit submodule add https:\/\/github.com\/budparr\/gohugo-theme-ananke.git themes\/ananke 这里是默认主题可以下载其他的主题\necho \x27theme = \x26quot;ananke\x26quot;\x27 \x26gt;\x26gt; config.toml如果下载了其他的主题这里的ananke改成其他的主题的名字\n5.添加内容 在站点的目录下打开终端执行以下代码:\nhugo new posts\/XXXX.md\n默认文件里会有这些:\n--- title: \x26quot;XXXX\x26quot; date: 2019-03-26T08:47:11\x2b01:00 draft: true ---  hugo server -D可以预览草稿\nhugo server可以预览非草稿\n浏览器打开http:\/\/localhost:1313，可以查看到运行效果\n在站点运行hugo\n这个hugo命令执行完后，会生成一个public文件夹，创建自己的GithubPages，新建仓库repository，命名为Username.github.io，在将public文件夹内的所有文件推上仓库里就可以了",
+    "inLanguage" : "zh-ch",
+    "author" : "赵凯",
+    "creator" : "赵凯",
+    "publisher": "赵凯",
+    "accountablePerson" : "赵凯",
+    "copyrightHolder" : "赵凯",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-08-29 19:29:40 \x2b0800 CST",
+    "dateModified" : "2019-08-29 19:29:40 \x2b0800 CST",
+    "url" : "https:\/\/1060146865.github.io\/2019\/%E5%A6%82%E4%BD%95%E7%94%A8-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2\/",
+    "wordCount" : "53",
+    "keywords" : [  "赵凯的博客"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://1060146865.github.io">赵凯的博客</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://1060146865.github.io">赵凯的博客</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">如何用hugo搭建个人博客</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://1060146865.github.io" rel="author">赵凯</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2019-08-29 itemprop="datePublished">August 29, 2019</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<h1 id="1-下载hugo">1.下载Hugo</h1>
+
+<p>下载网站:<a href="https://github.com/gohugoio/hugo/releases/tag/v0.48" rel="nofollow noreferrer" target="_blank">https://github.com/gohugoio/hugo/releases/tag/v0.48</a></p>
+
+<p><code>Windows</code>下载<code>hugo_xxx_Windows-64bit.zip</code></p>
+
+<p>新建一个文件夹解压缩得到一个hugo.exe</p>
+
+<h1 id="2-hugo环境变量配置">2.Hugo环境变量配置</h1>
+
+<p>将<code>hugo.exe</code>的地址加到<code>PATH</code>里</p>
+
+<p>终端下输入<code>&lt;hugo version&gt;</code>检验是否配好环境变量</p>
+
+<h1 id="3-创建一个新站点">3.创建一个新站点</h1>
+
+<p><code>hugo new site quickstart</code>这里的<code>quickstart</code>可以改成其他的名字</p>
+
+<h1 id="4-添加主题">4.添加主题</h1>
+
+<p>在站点的目录下打开终端执行以下代码:</p>
+
+<p><code>cd quickstart</code></p>
+
+<p><code>git init</code></p>
+
+<p><code>git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke</code> 这里是默认主题可以下载其他的主题</p>
+
+<p><code>echo 'theme = &quot;ananke&quot;' &gt;&gt; config.toml</code>如果下载了其他的主题这里的ananke改成其他的主题的名字</p>
+
+<h1 id="5-添加内容">5.添加内容</h1>
+
+<p>在站点的目录下打开终端执行以下代码:</p>
+
+<p><code>hugo new posts/XXXX.md</code></p>
+
+<p>默认文件里会有这些:</p>
+
+<pre><code>---
+title: &quot;XXXX&quot;
+date: 2019-03-26T08:47:11+01:00
+draft: true
+---
+</code></pre>
+
+<p><code>hugo server -D</code>可以预览草稿</p>
+
+<p><code>hugo server</code>可以预览非草稿</p>
+
+<p>浏览器打开<code>http://localhost:1313</code>，可以查看到运行效果</p>
+
+<p>在站点运行<code>hugo</code></p>
+
+<p>这个<code>hugo</code>命令执行完后，会生成一个<code>public</code>文件夹，创建自己的<code>GithubPages</code>，新建仓库<code>repository</code>，命名为<code>Username.github.io</code>，在将<code>public</code>文件夹内的所有文件推上仓库里就可以了</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>赵凯 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://1060146865.github.io/2019/%E5%A6%82%E4%BD%95%E7%94%A8-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/>https://1060146865.github.io/2019/%E5%A6%82%E4%BD%95%E7%94%A8-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://1060146865.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://1060146865.github.io/2019/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/" class="prev" rel="prev" title="HTML常用标签"><i class="iconfont icon-left"></i>&nbsp;HTML常用标签</a>
+         
+        
+        <a href="https://1060146865.github.io/2020/css-%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="next" rel="next" title="CSS 知识总结">CSS 知识总结&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://1060146865.github.io">赵凯</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="赵凯">
+  
+  
+  
+  <link rel="prev" href="https://1060146865.github.io/2019/%E5%A6%82%E4%BD%95%E7%94%A8-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" />
+  <link rel="next" href="https://1060146865.github.io/2020/%E6%B5%85%E6%9E%90url/" />
+  <link rel="canonical" href="https://1060146865.github.io/2020/css-%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           CSS 知识总结 | 赵凯的博客
+       
+  </title>
+  <meta name="title" content="CSS 知识总结 | 赵凯的博客">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/1060146865.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "CSS 知识总结",
+    "headline" : "CSS 知识总结",
+    "description" : "浏览器渲染原理: 1.浏览器渲染过程： - 根据HMTL创建HTML树（DOM） - 根据CSS创建CSS树（CSSOM） - 将两棵树合并成一颗渲染树（render tree） - Layout布局（文档流\/盒模型\/计算大小和位置） - Paint绘制（把边框颜色\/文字颜色\/阴影等画出来） - Compose合成（根据层叠关系展示画面）\n2.更新的方式\nCSS 动画的两种做法（transition 和 animation） transition是过渡的意思，它只有开始帧和结束帧，中间的过程浏览器用你指定的属性自动完成，你无法自己控制 - inline元素不支持transition，先变成block - 并不是所有属性都能过渡例如：display:none=\x26gt;block没有办法过渡，一般改为 visibility:hidden=\x26gt;visible；\nanimation是动画的意思，它包含多个关键帧，通过控制帧，可以做出复杂的动画 - 语法 - animation：时长 过渡方式 延迟 次数 方向 填充模式 是否暂停 动画名 - 时长：1s或1000ms - 过渡方式：跟transition取值一样 - 次数：3或2.4或infinite（无穷尽） - 方向：reverse（相反）\/alternate（轮流）\/alternate-reverse（交替反转） - 填充模式：none\/forwards\/backwards\/both - 是否暂停：paused\/running",
+    "inLanguage" : "zh-ch",
+    "author" : "赵凯",
+    "creator" : "赵凯",
+    "publisher": "赵凯",
+    "accountablePerson" : "赵凯",
+    "copyrightHolder" : "赵凯",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-05-19 20:25:40 \x2b0800 CST",
+    "dateModified" : "2020-05-19 20:25:40 \x2b0800 CST",
+    "url" : "https:\/\/1060146865.github.io\/2020\/css-%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93\/",
+    "wordCount" : "50",
+    "keywords" : [  "赵凯的博客"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://1060146865.github.io">赵凯的博客</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://1060146865.github.io">赵凯的博客</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">CSS 知识总结</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://1060146865.github.io" rel="author">赵凯</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-05-19 itemprop="datePublished">May 19, 2020</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<h1 id="浏览器渲染原理">浏览器渲染原理:</h1>
+
+<p>1.浏览器渲染过程：
+- 根据HMTL创建HTML树（DOM）
+- 根据CSS创建CSS树（CSSOM）
+- 将两棵树合并成一颗渲染树（render tree）
+- Layout布局（文档流/盒模型/计算大小和位置）
+- Paint绘制（把边框颜色/文字颜色/阴影等画出来）
+- Compose合成（根据层叠关系展示画面）</p>
+
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/tupian/11.png" alt="avatar" class="lazyload"><figcaption class="image-caption">avatar</figcaption></figure></p>
+
+<p>2.更新的方式</p>
+
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/tupian/22.png" alt="avatar" class="lazyload"><figcaption class="image-caption">avatar</figcaption></figure></p>
+
+<h1 id="css-动画的两种做法-transition-和-animation">CSS 动画的两种做法（transition 和 animation）</h1>
+
+<p>transition是过渡的意思，它只有开始帧和结束帧，中间的过程浏览器用你指定的属性自动完成，你无法自己控制
+- inline元素不支持transition，先变成block
+- 并不是所有属性都能过渡例如：display:none=&gt;block没有办法过渡，一般改为
+visibility:hidden=&gt;visible；</p>
+
+<p>animation是动画的意思，它包含多个关键帧，通过控制帧，可以做出复杂的动画
+- 语法
+  - animation：时长 过渡方式 延迟 次数 方向 填充模式 是否暂停 动画名
+  - 时长：1s或1000ms
+  - 过渡方式：跟transition取值一样
+  - 次数：3或2.4或infinite（无穷尽）
+  - 方向：reverse（相反）/alternate（轮流）/alternate-reverse（交替反转）
+  - 填充模式：none/forwards/backwards/both
+  - 是否暂停：paused/running</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>赵凯 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://1060146865.github.io/2020/css-%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/>https://1060146865.github.io/2020/css-%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://1060146865.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://1060146865.github.io/2019/%E5%A6%82%E4%BD%95%E7%94%A8-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="prev" rel="prev" title="如何用hugo搭建个人博客"><i class="iconfont icon-left"></i>&nbsp;如何用hugo搭建个人博客</a>
+         
+        
+        <a href="https://1060146865.github.io/2020/%E6%B5%85%E6%9E%90url/" class="next" rel="next" title="浅析URL">浅析URL&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://1060146865.github.io">赵凯</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
