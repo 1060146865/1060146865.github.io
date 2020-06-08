@@ -5,8 +5,50 @@
     <description>Recent content in 赵凯的博客 on 赵凯的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-ch</language>
-    <lastBuildDate>Mon, 25 May 2020 19:36:56 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 08 Jun 2020 17:17:13 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>JavaScript 的诞生</title>
+      <link>https://1060146865.github.io/2020/javascript-%E7%9A%84%E8%AF%9E%E7%94%9F/</link>
+      <pubDate>Mon, 08 Jun 2020 17:17:13 +0800</pubDate>
+      
+      <guid>https://1060146865.github.io/2020/javascript-%E7%9A%84%E8%AF%9E%E7%94%9F/</guid>
+      <description>
+
+&lt;h1 id=&#34;javascript-的诞生&#34;&gt;JavaScript 的诞生&lt;/h1&gt;
+
+&lt;p&gt;1994 年，网景公司（Netscape）发布了 Navigator 浏览器0.9版。这是历史上第一个比较成熟的网络浏览器，轰动一时。但是，这个版本的浏览器只能用来浏览，不具备与访问者互动的能力。网景公司急需一种网页脚本语言，使得浏览器可以与网页互动。&lt;/p&gt;
+
+&lt;p&gt;当时的形势就是，网景公司的整个管理层，都是 Java 语言的信徒，Sun 公司完全介入网页脚本语言的决策。&lt;/p&gt;
+
+&lt;p&gt;此时，34 岁的系统程序员 Brendan Eich 登场了。1995 年 4 月，网景公司录用了他。&lt;/p&gt;
+
+&lt;p&gt;Brendan Eich 的主要方向和兴趣是函数式编程，网景公司招聘他的目的，是研究将 Scheme 语言作为网页脚本语言的可能性。Brendan Eich 本人也是这样想的，以为进入新公司后，会主要与 Scheme 语言打交道。&lt;/p&gt;
+
+&lt;p&gt;仅仅一个月之后，1995年5月，网景公司做出决策，未来的网页脚本语言必须”看上去与 Java 足够相似”，但是比 Java 简单，使得非专业的网页作者也能很快上手。这个决策实际上将 Perl、Python、Tcl、Scheme 等非面向对象编程的语言都排除在外了。&lt;/p&gt;
+
+&lt;p&gt;Brendan Eich 被指定为这种”简化版Java语言”的设计师。&lt;/p&gt;
+
+&lt;p&gt;但是，他对 Java 一点兴趣也没有。为了应付公司安排的任务，他只用 10 天时间就把 Javascript 设计出来了。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;“与其说我爱 Javascript，不如说我恨它。它是 C 语言和 Self 语言一夜情的产物。十八世纪英国文学家约翰逊博士说得好：’它的优秀之处并非原创，它的原创之处并不优秀。’” ——Brendan Eich&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;就是这样一个连发明这门语言的人都不待见，只用了 10 天时间草草完工的语言竟然成了世界上使用最广泛的语言之一，实在是充满了传奇色彩。&lt;/p&gt;
+
+&lt;h1 id=&#34;javascript-的历史&#34;&gt;JavaScript 的历史&lt;/h1&gt;
+
+&lt;p&gt;它最初由Netscape的Brendan Eich设计。JavaScript是甲骨文公司的注册商标。Ecma国际以JavaScript为基础制定了ECMAScript标准。JavaScript也可以用于其他场合，如服务器端编程。完整的JavaScript实现包含三个部分：ECMAScript，文档对象模型，浏览器对象模型。&lt;/p&gt;
+
+&lt;p&gt;Netscape在最初将其脚本语言命名为LiveScript，后来Netscape在与Sun合作之后将其改名为JavaScript。JavaScript最初受Java启发而开始设计的，目的之一就是“看上去像Java”，因此语法上有类似之处，一些名称和命名规范也借自Java。但JavaScript的主要设计原则源自Self和Scheme。JavaScript与Java名称上的近似，是当时Netscape为了营销考虑与Sun微系统达成协议的结果。尽管JavaScript作为给非程序人员的脚本语言，而非作为给程序人员的脚本语言来推广和宣传，但是JavaScript具有非常丰富的特性。&lt;/p&gt;
+
+&lt;p&gt;发展初期，JavaScript的标准并未确定，同期有Netscape的JavaScript，微软的JScript和CEnvi的ScriptEase三足鼎立。1997年，在ECMA（欧洲计算机制造商协会）的协调下，由Netscape、Sun、微软、Borland组成的工作组确定统一标准：ECMA-262。&lt;/p&gt;
+
+&lt;h1 id=&#34;javascript缺陷&#34;&gt;JavaScript缺陷&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.ruanyifeng.com/blog/2011/06/10_design_defects_in_javascript.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://www.ruanyifeng.com/blog/2011/06/10_design_defects_in_javascript.html&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>浅析URL</title>
