@@ -2,9 +2,9 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
-      <loc>https://1060146865.github.io/2020/javascript-%E7%9A%84%E8%AF%9E%E7%94%9F/</loc>
+      <loc>https://1060146865.github.io/2020/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</loc>
       
-      <lastmod>2020-06-08T17:17:13+08:00</lastmod>
+      <lastmod>2020-06-29T18:58:55+08:00</lastmod>
       
       
       
@@ -14,7 +14,7 @@
     <url>
       <loc>https://1060146865.github.io/posts/</loc>
       
-      <lastmod>2020-06-08T17:17:13+08:00</lastmod>
+      <lastmod>2020-06-29T18:58:55+08:00</lastmod>
       
       
       
@@ -26,11 +26,21 @@
     <url>
       <loc>https://1060146865.github.io/</loc>
       
-      <lastmod>2020-06-08T17:17:13+08:00</lastmod>
+      <lastmod>2020-06-29T18:58:55+08:00</lastmod>
       
       
       
       <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://1060146865.github.io/2020/javascript-%E7%9A%84%E8%AF%9E%E7%94%9F/</loc>
+      
+      <lastmod>2020-06-08T17:17:13+08:00</lastmod>
+      
+      
       
       
     </url>

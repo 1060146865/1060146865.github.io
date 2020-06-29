@@ -6,10 +6,24 @@
     <description>Recent content in Posts on 赵凯的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-ch</language>
-    <lastBuildDate>Mon, 08 Jun 2020 17:17:13 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 29 Jun 2020 18:58:55 +0800</lastBuildDate>
     
 	<atom:link href="https://1060146865.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JS的基本语法</title>
+      <link>https://1060146865.github.io/2020/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Mon, 29 Jun 2020 18:58:55 +0800</pubDate>
+      
+      <guid>https://1060146865.github.io/2020/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</guid>
+      <description>什么是表达式和语句 var a = 1 + 3;  1 + 3叫做表达式,表达式不需要分号结尾。语句以分号结尾，一个分号就表示一个语句结束。
+语句和表达式的区别在于，前者主要为了进行某种操作，一般情况下不需要返回值；后者则是为了得到返回值，一定会返回一个值。
+标识符的规则 标识符指的是用来识别各种值的合法名称。
+标识符命名规则如下
+ 第一个字符，可以是任意 Unicode 字母（包括英文字母和其他语言的字母），以及美元符号（$）和下划线（_）。 第二个字符及后面的字符，除了 Unicode 字母、美元符号和下划线，还可以用数字0-9。  if else 语句 if (m === 1) { // 满足条件时，执行的语句 } else { // 不满足条件时，执行的语句 }  对同一个变量进行多次判断时，多个if&amp;hellip;else语句可以连写在一起。
+if (m === 0) { // ... } else if (m === 1) { // ... } else if (m === 2) { // ... } else { // .</description>
+    </item>
     
     <item>
       <title>JavaScript 的诞生</title>
