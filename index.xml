@@ -5,8 +5,151 @@
     <description>Recent content in 赵凯的博客 on 赵凯的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-ch</language>
-    <lastBuildDate>Mon, 29 Jun 2020 18:58:55 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 01 Jul 2020 22:14:26 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>JS 对象基本用法</title>
+      <link>https://1060146865.github.io/2020/js-%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Wed, 01 Jul 2020 22:14:26 +0800</pubDate>
+      
+      <guid>https://1060146865.github.io/2020/js-%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/</guid>
+      <description>
+
+&lt;h1 id=&#34;js-对象基本用法&#34;&gt;JS 对象基本用法&lt;/h1&gt;
+
+&lt;h1 id=&#34;声明对象的方法&#34;&gt;声明对象的方法&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;let obj ={&#39;name&#39;:&#39;zz&#39;,&#39;age&#39;:18}  //简单
+
+let obj =new Object({&#39;name&#39;:&#39;zz&#39;,&#39;age&#39;:18}) //规范
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;注意&lt;/li&gt;
+&lt;li&gt;键名是字符串，不是标识符，可以包含任意字符&lt;/li&gt;
+&lt;li&gt;引号可以省略，省略之后只能写标识符，键名有空格是不可以省略&lt;/li&gt;
+&lt;li&gt;就算引号省略了，键名还是字符串&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;奇怪的属性值&#34;&gt;奇怪的属性值&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;所有属性名都会自动变成字符串&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;let obj ={
+1:&#39;a&#39;,
+1e2:true,//会自动计算后再转为字符串
+0XXF:false //会自动转化为10进制再转为字符串} 
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;隐藏属性&#34;&gt;隐藏属性&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;JS里每个对象都有一个隐藏属性&lt;/li&gt;
+&lt;li&gt;这个隐藏属性储存着其共有属性组成的对象的地址&lt;/li&gt;
+&lt;li&gt;这个共有属性组成的对象叫做原型&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;也就是说隐藏属性储存着原型的地址&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var obj{}
+obj.toString()//不报错
+因为obj的隐藏属性对应的对象上有toString
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;原型&#34;&gt;原型&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;每个对象都有原型&lt;/li&gt;
+&lt;li&gt;原型里存着对象的共有属性&lt;/li&gt;
+&lt;li&gt;比如obj的原型就是一个对象&lt;/li&gt;
+&lt;li&gt;obj._proto__存着这个对象的地址&lt;/li&gt;
+&lt;li&gt;这个对象里有toString/constructor/valueOf等属性&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;对象的原型也是对象&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;对象的原型也有原型&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;obj={}的原型即为所有对象的原型&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;这个原型包含所有对象的共有属性，是对象的根&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;这个原型也有也有原型，是null&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;删除对象的属性&#34;&gt;删除对象的属性&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;obj.name = undefined  //只删除属性值
+delete obj.name  //删除属性名和属性值
+delete obj[&#39;name&#39;] //删除属性名和属性值
+&#39;name&#39; in obj //检查obj是否含有属性名
+&#39;name&#39; in obj &amp;amp;&amp;amp; obj.xxx ===undefined //有属性名，但是但是值为undefined
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;查看对象的属性&#34;&gt;查看对象的属性&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;Object.keys(obj)   //读取对象自身所有的属性 
+Object.values(obj)  //读取对象的属性值 
+Object.entries(obj)  //读取对象的属性名和属性值,得到是length个数组
+ console.dir(obj)或者obj.__proto__ (不推荐) //读取共有属性
+&#39;toString&#39; in obj //检查是否有这个属性,自身属性和共有属性都算
+obj.hasOwnProperty(&#39;name&#39;) //检查这个属性是否是自身属性
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;查看属性方法&#34;&gt;查看属性方法&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;中括号语法：obj[&amp;lsquo;key&amp;rsquo;]  //推荐&lt;/li&gt;
+&lt;li&gt;点语法：obj.key&lt;/li&gt;
+&lt;li&gt;其它 ：obj[key]  //key值是一个变量是使用此语法&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;注obj[&amp;lsquo;name&amp;rsquo;] == obj.name != obj[name] //name 是字符串&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;let name = &#39;zzz&#39;
+obj[name]==obj[&#39;zzz&#39;] //obj[xxx] xxx这个变量，不是一个字符串。
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;增加对象的属性&#34;&gt;增加对象的属性&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;let obj = {name:&#39;zzz&#39;}
+obj.name = &#39;zzz&#39;
+obj[&#39;name&#39;] =&#39;zzz&#39;
+obj.[&#39;na&#39;+&#39;me&#39;] =&#39;zzz&#39;
+let key = &#39;name&#39; obj[key] ==&#39;zzz&#39;
+
+错误 obj[name] =&#39;zzz&#39; --因为name是一个变量
+
+Object.assign(obj,{name:&#39;zzz&#39;,age:18})  //批量赋值
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;修改对象的属性&#34;&gt;修改对象的属性&lt;/h1&gt;
+
+&lt;h3 id=&#34;无法通过自身修改或增加共有属性&#34;&gt;无法通过自身修改或增加共有属性&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;obj.toString = &#39;xxx&#39;    只会在改 obj 自身属性
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;一般不要修改修改原型的共有属性&#34;&gt;一般不要修改修改原型的共有属性&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;obj.__proto__.toString =&#39;zzz&#39; //不推荐使用 __proto__
+
+window.Object.prototype.toString = &#39;zzz&#39;
+
+let obj = Object.create(common)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;name-in-obj和obj-hasownproperty-name-的区别&#34;&gt;&amp;lsquo;name&amp;rsquo; in obj和obj.hasOwnProperty(&amp;lsquo;name&amp;rsquo;) 的区别&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;in 自身属性和共有属性都返回true&lt;/li&gt;
+&lt;li&gt;hasOwnProperty 是自身属性才返回true ,不会去判断原型&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>JS的基本语法</title>
