@@ -101,33 +101,6 @@ CSS 动画的两种做法（transition 和 animation） transition是过渡的�
     </item>
     
     <item>
-      <title>如何用hugo搭建个人博客</title>
-      <link>https://1060146865.github.io/2019/%E5%A6%82%E4%BD%95%E7%94%A8-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
-      <pubDate>Thu, 29 Aug 2019 19:29:40 +0800</pubDate>
-      
-      <guid>https://1060146865.github.io/2019/%E5%A6%82%E4%BD%95%E7%94%A8-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
-      <description>1.下载Hugo 下载网站:https://github.com/gohugoio/hugo/releases/tag/v0.48
-Windows下载hugo_xxx_Windows-64bit.zip
-新建一个文件夹解压缩得到一个hugo.exe
-2.Hugo环境变量配置 将hugo.exe的地址加到PATH里
-终端下输入&amp;lt;hugo version&amp;gt;检验是否配好环境变量
-3.创建一个新站点 hugo new site quickstart这里的quickstart可以改成其他的名字
-4.添加主题 在站点的目录下打开终端执行以下代码:
-cd quickstart
-git init
-git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke 这里是默认主题可以下载其他的主题
-echo &#39;theme = &amp;quot;ananke&amp;quot;&#39; &amp;gt;&amp;gt; config.toml如果下载了其他的主题这里的ananke改成其他的主题的名字
-5.添加内容 在站点的目录下打开终端执行以下代码:
-hugo new posts/XXXX.md
-默认文件里会有这些:
---- title: &amp;quot;XXXX&amp;quot; date: 2019-03-26T08:47:11+01:00 draft: true ---  hugo server -D可以预览草稿
-hugo server可以预览非草稿
-浏览器打开http://localhost:1313，可以查看到运行效果
-在站点运行hugo
-这个hugo命令执行完后，会生成一个public文件夹，创建自己的GithubPages，新建仓库repository，命名为Username.github.io，在将public文件夹内的所有文件推上仓库里就可以了</description>
-    </item>
-    
-    <item>
       <title>HTML常用标签</title>
       <link>https://1060146865.github.io/2019/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</link>
       <pubDate>Mon, 26 Aug 2019 19:25:40 +0800</pubDate>
