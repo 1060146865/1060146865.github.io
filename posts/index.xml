@@ -88,16 +88,34 @@ JavaScript缺陷 http://www.ruanyifeng.com/blog/2011/06/10_design_defects_in_jav
     </item>
     
     <item>
-      <title>CSS 知识总结</title>
-      <link>https://1060146865.github.io/2020/css-%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</link>
+      <title>CSS 知识小总结</title>
+      <link>https://1060146865.github.io/2020/css-%E7%9F%A5%E8%AF%86%E5%B0%8F%E6%80%BB%E7%BB%93/</link>
       <pubDate>Tue, 19 May 2020 20:25:40 +0800</pubDate>
       
-      <guid>https://1060146865.github.io/2020/css-%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</guid>
+      <guid>https://1060146865.github.io/2020/css-%E7%9F%A5%E8%AF%86%E5%B0%8F%E6%80%BB%E7%BB%93/</guid>
       <description> 浏览器渲染原理: 1.浏览器渲染过程：
  根据HMTL创建HTML树（DOM） 根据CSS创建CSS树（CSSOM） 将两棵树合并成一颗渲染树（render tree） Layout布局（文档流/盒模型/计算大小和位置） Paint绘制（把边框颜色/文字颜色/阴影等画出来） Compose合成（根据层叠关系展示画面）  2.更新的方式
 CSS 动画的两种做法（transition 和 animation） transition是过渡的意思，它只有开始帧和结束帧，中间的过程浏览器用你指定的属性自动完成，你无法自己控制
  inline元素不支持transition，先变成block 并不是所有属性都能过渡例如：display:none=&amp;gt;block没有办法过渡，一般改为 visibility:hidden=&amp;gt;visible；  animation是动画的意思，它包含多个关键帧，通过控制帧，可以做出复杂的动画
  语法  animation：时长 过渡方式 延迟 次数 方向 填充模式 是否暂停 动画名 时长：1s或1000ms 过渡方式：跟transition取值一样 次数：3或2.4或infinite（无穷尽） 方向：reverse（相反）/alternate（轮流）/alternate-reverse（交替反转） 填充模式：none/forwards/backwards/both 是否暂停：paused/running   </description>
+    </item>
+    
+    <item>
+      <title>CSS笔记</title>
+      <link>https://1060146865.github.io/2019/css%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Thu, 05 Sep 2019 17:20:40 +0800</pubDate>
+      
+      <guid>https://1060146865.github.io/2019/css%E7%AC%94%E8%AE%B0/</guid>
+      <description>表单  作用：存储用户信息
+ 声明表单 form
+ 表单控件 &amp;lt;input type=&amp;quot;text&amp;quot;/&amp;gt;  表单控件的提示信息 
+ 属性
+text 文本框 password 密码框 submit 提交按钮 reset 重置按钮 button 空按钮 radio 单选按钮 checkbox 多选按钮   表单控件input的属性 value 是input的内容，可以更改按钮的内容，也可以是文本框里提交的值（占位） name 可以设置radio单选功能，需要name值相同 checked 单选框和多选的默认选中 id 给input起名字，可以label的for属性关联    css层叠样式表 样式表 创建css的方式，设置css语句的地方
+内部样式表
+行内样式表
+外部样式表
+外部导入样式表
+选择器 选择器整体分为5大类： 基本选择器、层次选择器、伪类选择器、属性选择器、伪对象（伪元素）选择器  基本选择器 1、通配符选择器 * 选择网页范围内所有的内容 * { margin: 0px; /* margin外边距 */ padding: 0px; /* padding内边距 */ } 2、 标记选择器、类型元素器（标签名） 栗子： 选择的是网页内的所有div标签 div { color: red; } 3、 class选择器，名字可以重复使用 html结构 &amp;lt;div class=&amp;quot;box2 font30&amp;quot;&amp;gt;老三 张三&amp;lt;/div&amp;gt; css样式 .</description>
     </item>
     
     <item>
