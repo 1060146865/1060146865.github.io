@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="赵凯">
+  
+  
+  
+  <link rel="prev" href="https://1060146865.github.io/2020/js-%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/" />
+  <link rel="next" href="https://1060146865.github.io/2020/js%E6%95%B0%E7%BB%84/" />
+  <link rel="canonical" href="https://1060146865.github.io/2020/js%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           JS 的运算符和数据类型转换 | 赵凯的博客
+       
+  </title>
+  <meta name="title" content="JS 的运算符和数据类型转换 | 赵凯的博客">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/1060146865.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "JS 的运算符和数据类型转换",
+    "headline" : "JS 的运算符和数据类型转换",
+    "description" : "运算符  算术运算符\n \x2b, -, *, \/, % 一般用来计算数值 当\x2b号任意一边出现字符时，\x2b号的功能就是字符拼接 -, *, \/, %会将两边的数据作为数值型数据计算  关系（比较）运算符\n \x26gt;, \x26gt;=, \x26lt;, \x26lt;=, ==, ===, !=, !== == 如果两边操作数相等时返回true。 != 如果两边操作数不相等时返回true === 两边操作数相等且类型相同时返回true。 !== 两边操作数不相等或类型不同时返回true。  赋值运算符\n =, \x2b=, -=, *=, \/=, %= =表示将右侧的数据放在左侧的变量中，重复赋值会覆盖原值 \x2b=, -=, *=, \/=, %=的规则请参考算术运算符  逻辑运算符\n 或：|| 且（与）：\x26amp;\x26amp; 非：!  一元运算符\n \x2b\x2b：自增1，在自身原有基础上增加1 --：自减1，在自身原有基础上减少1 前(\x2b\x2bi)：先计算，后使用 后(i\x2b\x2b)：先使用，再计算  隐式类型转换\n 计算过程中不按照原本的数据类型计算，而是默认作为其他数据类型计算，该过程称为数据   数据类型转换  隐式类型转换：计算过程中不按照原本的数据类型计算，而是作为其他数据类型计算",
+    "inLanguage" : "zh-ch",
+    "author" : "赵凯",
+    "creator" : "赵凯",
+    "publisher": "赵凯",
+    "accountablePerson" : "赵凯",
+    "copyrightHolder" : "赵凯",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-07-24 16:38:29 \x2b0800 CST",
+    "dateModified" : "2020-07-24 16:38:29 \x2b0800 CST",
+    "url" : "https:\/\/1060146865.github.io\/2020\/js%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2\/",
+    "wordCount" : "269",
+    "keywords" : [  "赵凯的博客"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://1060146865.github.io">赵凯的博客</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://1060146865.github.io">赵凯的博客</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">JS 的运算符和数据类型转换</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://1060146865.github.io" rel="author">赵凯</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-07-24 itemprop="datePublished">July 24, 2020</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<h1 id="运算符">运算符</h1>
+
+<ol>
+<li><p>算术运算符</p>
+
+<ul>
+<li><code>+, -, *, /, %</code></li>
+<li>一般用来计算数值</li>
+<li>当<code>+</code>号任意一边出现字符时，+号的功能就是字符拼接</li>
+<li><code>-, *, /, %</code>会将两边的数据作为数值型数据计算</li>
+</ul></li>
+
+<li><p>关系（比较）运算符</p>
+
+<ul>
+<li><code>&gt;, &gt;=, &lt;, &lt;=, ==, ===, !=, !==</code></li>
+<li><code>==</code> 如果两边操作数相等时返回true。</li>
+<li><code>!=</code> 如果两边操作数不相等时返回true</li>
+<li><code>===</code> 两边操作数相等且类型相同时返回true。</li>
+<li><code>!==</code> 两边操作数不相等或类型不同时返回true。</li>
+</ul></li>
+
+<li><p>赋值运算符</p>
+
+<ul>
+<li><code>=, +=, -=, *=, /=, %=</code></li>
+<li><code>=</code>表示将右侧的数据放在左侧的变量中，重复赋值会覆盖原值</li>
+<li><code>+=, -=, *=, /=, %=</code>的规则请参考算术运算符</li>
+</ul></li>
+
+<li><p>逻辑运算符</p>
+
+<ul>
+<li>或：||</li>
+<li>且（与）：&amp;&amp;</li>
+<li>非：!</li>
+</ul></li>
+
+<li><p>一元运算符</p>
+
+<ul>
+<li><code>++</code>：自增1，在自身原有基础上增加1</li>
+<li><code>--</code>：自减1，在自身原有基础上减少1</li>
+<li>前(++i)：先计算，后使用</li>
+<li>后(i++)：先使用，再计算</li>
+</ul></li>
+
+<li><p>隐式类型转换</p>
+
+<ul>
+<li>计算过程中不按照原本的数据类型计算，而是默认作为其他数据类型计算，该过程称为数据</li>
+</ul></li>
+</ol>
+
+<h1 id="数据类型转换">数据类型转换</h1>
+
+<ol>
+<li><p>隐式类型转换：计算过程中不按照原本的数据类型计算，而是作为其他数据类型计算</p>
+
+<ul>
+<li>场景：
+
+<ol>
+<li>运算符</li>
+</ol></li>
+
+<li><p>规则：</p>
+
+<ol>
+<li><code>- * /</code> 在对各种非Number类型运用数学运算符(- * /)时，会先将非Number类型转换为Number类型。</li>
+
+<li><p><code>+</code> 可以用来拼接字符串。</p>
+
+<ul>
+<li>当一侧为String类型，被识别为字符串拼接，并会优先将另一侧转换为字符串类型。</li>
+<li>当一侧为Number类型，另一侧为原始类型，则将原始类型转换为Number类型。</li>
+<li>当一侧为Number类型，另一侧为引用类型，将引用类型和Number类型转换成字符串后拼接。</li>
+</ul></li>
+
+<li><p>使用 if while for 语句时，我们期望表达式是一个Boolean，所以一定伴随着隐式类型转换。而这里面又分为两种情况：</p>
+
+<ul>
+<li>如果只有单个变量，会先将变量转换为Boolean值。 <code>只有 null undefined '' NaN 0 false 这几个是 false，其他的情况都是 true，比如 {} , []。</code></li>
+
+<li><p>使用 == 比较中的5条规则</p>
+
+<ul>
+<li>规则 1：NaN和其他任何类型比较永远返回false（包括和他自己）。 <code>NaN == NaN // false</code></li>
+
+<li><p>规则 2：Boolean 和其他任何类型比较，Boolean 首先被转换为 Number 类型。</p>
+
+<pre><code>true == 1  // true 
+true == '2'  // false, 先把 true 变成 1，而不是把 '2' 变成 true
+true == ['1']  // true, 先把 true 变成 1， ['1']拆箱成 '1', 再参考规则3
+true == ['2']  // false, 同上
+undefined == false // false ，首先 false 变成 0，然后参考规则4
+null == false // false，同上
+</code></pre></li>
+
+<li><p>规则 3：String和Number比较，先将String转换为Number类型。</p>
+
+<pre><code>123 == '123' // true, '123' 会先变成 123
+'' == 0 // true, '' 会首先变成 0
+</code></pre></li>
+
+<li><p>规则 4：null == undefined比较结果是true，除此之外，null、undefined和其他任何结果的比较值都为false。</p></li>
+
+<li><p>规则 5：原始类型和引用类型做比较时，引用类型会依照ToPrimitive规则转换为原始类型。</p>
+
+<ul>
+<li>ToPrimitive规则，是引用类型向原始类型转变的规则，它遵循先valueOf后toString的模式期望得到一个原始类型。</li>
+
+<li><p>如果还是没法得到一个原始类型，就会抛出 TypeError。</p>
+
+<pre><code>'[object Object]' == {} 
+// true, 对象和字符串比较，对象通过 toString 得到一个基本类型值
+'1,2,3' == [1, 2, 3] 
+// true, 同上  [1, 2, 3]通过 toString 得到一个基本类型值
+</code></pre></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ol></li>
+</ul></li>
+
+<li><p>显示（强制）类型转换</p>
+
+<ul>
+<li>其他转数值：
+
+<ul>
+<li>规则
+
+<ul>
+<li>严格转换：必须全部为数字，才能转成数值，否则NaN
+
+<ul>
+<li>&ldquo;hello&rdquo; &mdash; NaN</li>
+<li>&ldquo;123a12&rdquo; &mdash; NaN</li>
+<li>&ldquo;12312&rdquo; &mdash; 12312</li>
+</ul></li>
+<li>非严格转换：从左向右检测，遇到第一个非数字的字符，停止转换；第一个字符就非数字，直接NaN
+
+<ul>
+<li>&ldquo;123a12&rdquo; &mdash; 123</li>
+<li>&ldquo;hello&rdquo; &mdash; NaN</li>
+<li>&ldquo;a1231&rdquo; &mdash; NaN</li>
+</ul></li>
+</ul></li>
+<li>方法：
+
+<ul>
+<li>parseInt()
+
+<ul>
+<li>非严格转换，不能识别小数点</li>
+</ul></li>
+<li>parseFloat()
+
+<ul>
+<li>非严格转换，能识别小数点</li>
+</ul></li>
+<li>Math.round()
+
+<ul>
+<li>严格转换，四舍五入取最近的整数</li>
+</ul></li>
+<li>Number()
+
+<ul>
+<li>严格转换，能识别小数点</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>其他转布尔：
+
+<ul>
+<li>规则：
+
+<ul>
+<li>字符：非空字符为true，空为false</li>
+<li>数值：非0为true，0为false</li>
+<li>对象数组函数：都是true</li>
+<li>undefined,null,NaN：都是false</li>
+</ul></li>
+<li>方法
+
+<ul>
+<li>Boolean()</li>
+</ul></li>
+</ul></li>
+<li>其他转字符：
+
+<ul>
+<li>规则：
+
+<ul>
+<li>默认，类似于直接给数据添加引号</li>
+<li>保留n为小数，存在四舍五入</li>
+<li>对象默认转成：[object Object]</li>
+</ul></li>
+<li>方法：
+
+<ul>
+<li>num.toString();</li>
+<li>num.toFixed(n);</li>
+<li>String();</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ol>
+
+<h1 id="一些补充">一些补充</h1>
+
+<ol>
+<li><p>关于NaN</p>
+
+<ul>
+<li>NaN：not a Number，不是一个数字</li>
+<li>数据类型是：数值型</li>
+<li>表示非法的运算，或错误的转换</li>
+<li>如何判断是不是NaN
+
+<ul>
+<li>isNaN(要检测的数据或变量)
+
+<ul>
+<li>true：是NaN</li>
+<li>false：不是NaN</li>
+</ul></li>
+</ul></li>
+<li>NaN与任何数据都不相等</li>
+</ul></li>
+
+<li><p>关于计算机中的小数</p>
+
+<ul>
+<li>浮点数的精度问题</li>
+<li>因为计算中的数据在运算时会被转成二进制，计算结束后又会从二进制转回十进制</li>
+<li>二进制中也存在无限数字，计算系统的位数有限，省略某些位数，导致一些小数的计算不精确</li>
+</ul></li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>赵凯 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://1060146865.github.io/2020/js%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/>https://1060146865.github.io/2020/js%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://1060146865.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://1060146865.github.io/2020/js-%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/" class="prev" rel="prev" title="JS 函数的执行时机"><i class="iconfont icon-left"></i>&nbsp;JS 函数的执行时机</a>
+         
+        
+        <a href="https://1060146865.github.io/2020/js%E6%95%B0%E7%BB%84/" class="next" rel="next" title="JS 数组">JS 数组&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2021</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://1060146865.github.io">赵凯</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

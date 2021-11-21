@@ -6,10 +6,58 @@
     <description>Recent content in Posts on 赵凯的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-ch</language>
-    <lastBuildDate>Tue, 21 Jul 2020 15:38:29 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 30 Jul 2020 18:38:29 +0800</lastBuildDate>
     
 	<atom:link href="https://1060146865.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>bind、call、apply</title>
+      <link>https://1060146865.github.io/2020/bindcallapply/</link>
+      <pubDate>Thu, 30 Jul 2020 18:38:29 +0800</pubDate>
+      
+      <guid>https://1060146865.github.io/2020/bindcallapply/</guid>
+      <description>bind、call、apply都是用来指定一个函数内部的this的值 实现call Function.prototype.call2 = function(context, ...args) { context = (context === undefined || context === null) ? window : context context.__fn = this let result = context.__fn(...args) delete context.__fn return result }  实现apply Function.prototype.apply2 = function(context, args) { context = (context === undefined || context === null) ? window : context context.__fn = this let result = context.__fn(...args) delete context.__fn return result }  实现bind Function.prototype.bind2 = function(context, .</description>
+    </item>
+    
+    <item>
+      <title>JS 数组去重</title>
+      <link>https://1060146865.github.io/2020/js%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/</link>
+      <pubDate>Tue, 28 Jul 2020 18:38:29 +0800</pubDate>
+      
+      <guid>https://1060146865.github.io/2020/js%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/</guid>
+      <description>数组去重 Map const arr = [3, 1, 1, 2, 5, 9, 3, 0] const deduplication1 = arr =&amp;gt; { let map = new Map() arr.forEach(v =&amp;gt; map.set(v, 1)) return [...map.keys()] }; console.log(deduplication1(arr));  Set const arr = [3, 1, 1, 2, 5, 9, 3, 0] const deduplication2 = arr =&amp;gt; [...new Set(arr)]; console.log(deduplication2(arr))  reduce const arr = [3, 1, 1, 2, 5, 9, 3, 0] const deduplication3 = arr =&amp;gt; arr.</description>
+    </item>
+    
+    <item>
+      <title>JS 数组</title>
+      <link>https://1060146865.github.io/2020/js%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Sun, 26 Jul 2020 17:38:29 +0800</pubDate>
+      
+      <guid>https://1060146865.github.io/2020/js%E6%95%B0%E7%BB%84/</guid>
+      <description>js数组 数组是一种类列表对象，它的原型中提供了遍历和修改元素的相关操作。JavaScript 数组的长度和元素类型都是非固定的。因为数组的长度可随时改变，并且其数据在内存中也可以不连续，所以 JavaScript 数组不一定是密集型的，这取决于它的使用方式。只能用整数作为数组元素的索引，而不能用字符串。
+创建数组 let a =[1,2,3] let a = new Array(&amp;quot;1&amp;quot;,&amp;quot;2&amp;quot;,&amp;quot;3&amp;quot;)  数组的静态方法 Array.isArray()
+Array.isArray方法返回一个布尔值，表示参数是否为数组。它可以弥补typeof运算符的不足。
+var arr = [1, 2, 3]; typeof arr // &amp;quot;object&amp;quot; Array.isArray(arr) // true  数组的实例方法 Array.length 返回或设置一个数组中的元素个数。该值是一个无符号 32-bit 整数，并且总是大于数组最高项的下标。
+const a =[1,2,3]; console.log(a.length); // 3  Array.at() at()方法接受一个整数值并返回该索引处的项目，允许正整数和负整数。负整数从数组中的最后一项开始计数。
+const array1 = [5, 12, 8, 130, 44]; undefined console.log(array1.at(3)) // 130  Array.concat() concat()方法用于合并两个或多个数组。此方法不会更改现有数组，而是返回一个新数组。
+const a = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]; const b = [&#39;d&#39;, &#39;e&#39;, &#39;f&#39;]; const c = a.</description>
+    </item>
+    
+    <item>
+      <title>JS 的运算符和数据类型转换</title>
+      <link>https://1060146865.github.io/2020/js%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</link>
+      <pubDate>Fri, 24 Jul 2020 16:38:29 +0800</pubDate>
+      
+      <guid>https://1060146865.github.io/2020/js%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</guid>
+      <description>运算符  算术运算符
+ +, -, *, /, % 一般用来计算数值 当+号任意一边出现字符时，+号的功能就是字符拼接 -, *, /, %会将两边的数据作为数值型数据计算  关系（比较）运算符
+ &amp;gt;, &amp;gt;=, &amp;lt;, &amp;lt;=, ==, ===, !=, !== == 如果两边操作数相等时返回true。 != 如果两边操作数不相等时返回true === 两边操作数相等且类型相同时返回true。 !== 两边操作数不相等或类型不同时返回true。  赋值运算符
+ =, +=, -=, *=, /=, %= =表示将右侧的数据放在左侧的变量中，重复赋值会覆盖原值 +=, -=, *=, /=, %=的规则请参考算术运算符  逻辑运算符
+ 或：|| 且（与）：&amp;amp;&amp;amp; 非：!  一元运算符
+ ++：自增1，在自身原有基础上增加1 --：自减1，在自身原有基础上减少1 前(++i)：先计算，后使用 后(i++)：先使用，再计算  隐式类型转换
+ 计算过程中不按照原本的数据类型计算，而是默认作为其他数据类型计算，该过程称为数据   数据类型转换  隐式类型转换：计算过程中不按照原本的数据类型计算，而是作为其他数据类型计算</description>
+    </item>
     
     <item>
       <title>JS 函数的执行时机</title>
@@ -88,19 +136,6 @@ JavaScript缺陷 http://www.ruanyifeng.com/blog/2011/06/10_design_defects_in_jav
     </item>
     
     <item>
-      <title>CSS 知识小总结</title>
-      <link>https://1060146865.github.io/2020/css-%E7%9F%A5%E8%AF%86%E5%B0%8F%E6%80%BB%E7%BB%93/</link>
-      <pubDate>Tue, 19 May 2020 20:25:40 +0800</pubDate>
-      
-      <guid>https://1060146865.github.io/2020/css-%E7%9F%A5%E8%AF%86%E5%B0%8F%E6%80%BB%E7%BB%93/</guid>
-      <description> 浏览器渲染原理: 1.浏览器渲染过程：
- 根据HMTL创建HTML树（DOM） 根据CSS创建CSS树（CSSOM） 将两棵树合并成一颗渲染树（render tree） Layout布局（文档流/盒模型/计算大小和位置） Paint绘制（把边框颜色/文字颜色/阴影等画出来） Compose合成（根据层叠关系展示画面）  2.更新的方式
-CSS 动画的两种做法（transition 和 animation） transition是过渡的意思，它只有开始帧和结束帧，中间的过程浏览器用你指定的属性自动完成，你无法自己控制
- inline元素不支持transition，先变成block 并不是所有属性都能过渡例如：display:none=&amp;gt;block没有办法过渡，一般改为 visibility:hidden=&amp;gt;visible；  animation是动画的意思，它包含多个关键帧，通过控制帧，可以做出复杂的动画
- 语法  animation：时长 过渡方式 延迟 次数 方向 填充模式 是否暂停 动画名 时长：1s或1000ms 过渡方式：跟transition取值一样 次数：3或2.4或infinite（无穷尽） 方向：reverse（相反）/alternate（轮流）/alternate-reverse（交替反转） 填充模式：none/forwards/backwards/both 是否暂停：paused/running   </description>
-    </item>
-    
-    <item>
       <title>CSS笔记</title>
       <link>https://1060146865.github.io/2019/css%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Thu, 05 Sep 2019 17:20:40 +0800</pubDate>
@@ -164,6 +199,19 @@ download属性表明当前链接用于下载，而不是跳转到另一个 URL�
 &amp;lt;header&amp;gt;表示整个网页的头部。
 &amp;lt;footer&amp;gt;网页的的尾部。
 &amp;lt;main&amp;gt;标签表示页面的主体内容。</description>
+    </item>
+    
+    <item>
+      <title>CSS 知识小总结</title>
+      <link>https://1060146865.github.io/2019/css-%E7%9F%A5%E8%AF%86%E5%B0%8F%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Mon, 19 Aug 2019 20:25:40 +0800</pubDate>
+      
+      <guid>https://1060146865.github.io/2019/css-%E7%9F%A5%E8%AF%86%E5%B0%8F%E6%80%BB%E7%BB%93/</guid>
+      <description> 浏览器渲染原理: 1.浏览器渲染过程：
+ 根据HMTL创建HTML树（DOM） 根据CSS创建CSS树（CSSOM） 将两棵树合并成一颗渲染树（render tree） Layout布局（文档流/盒模型/计算大小和位置） Paint绘制（把边框颜色/文字颜色/阴影等画出来） Compose合成（根据层叠关系展示画面）  2.更新的方式
+CSS 动画的两种做法（transition 和 animation） transition是过渡的意思，它只有开始帧和结束帧，中间的过程浏览器用你指定的属性自动完成，你无法自己控制
+ inline元素不支持transition，先变成block 并不是所有属性都能过渡例如：display:none=&amp;gt;block没有办法过渡，一般改为 visibility:hidden=&amp;gt;visible；  animation是动画的意思，它包含多个关键帧，通过控制帧，可以做出复杂的动画
+ 语法  animation：时长 过渡方式 延迟 次数 方向 填充模式 是否暂停 动画名 时长：1s或1000ms 过渡方式：跟transition取值一样 次数：3或2.4或infinite（无穷尽） 方向：reverse（相反）/alternate（轮流）/alternate-reverse（交替反转） 填充模式：none/forwards/backwards/both 是否暂停：paused/running   </description>
     </item>
     
   </channel>

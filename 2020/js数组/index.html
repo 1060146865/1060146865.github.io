@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="赵凯">
+  
+  
+  
+  <link rel="prev" href="https://1060146865.github.io/2020/js%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" />
+  <link rel="next" href="https://1060146865.github.io/2020/js%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/" />
+  <link rel="canonical" href="https://1060146865.github.io/2020/js%E6%95%B0%E7%BB%84/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           JS 数组 | 赵凯的博客
+       
+  </title>
+  <meta name="title" content="JS 数组 | 赵凯的博客">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/1060146865.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "JS 数组",
+    "headline" : "JS 数组",
+    "description" : "js数组 数组是一种类列表对象，它的原型中提供了遍历和修改元素的相关操作。JavaScript 数组的长度和元素类型都是非固定的。因为数组的长度可随时改变，并且其数据在内存中也可以不连续，所以 JavaScript 数组不一定是密集型的，这取决于它的使用方式。只能用整数作为数组元素的索引，而不能用字符串。\n创建数组 let a =[1,2,3] let a = new Array(\x26quot;1\x26quot;,\x26quot;2\x26quot;,\x26quot;3\x26quot;)  数组的静态方法 Array.isArray()\nArray.isArray方法返回一个布尔值，表示参数是否为数组。它可以弥补typeof运算符的不足。\nvar arr = [1, 2, 3]; typeof arr \/\/ \x26quot;object\x26quot; Array.isArray(arr) \/\/ true  数组的实例方法 Array.length 返回或设置一个数组中的元素个数。该值是一个无符号 32-bit 整数，并且总是大于数组最高项的下标。\nconst a =[1,2,3]; console.log(a.length); \/\/ 3  Array.at() at()方法接受一个整数值并返回该索引处的项目，允许正整数和负整数。负整数从数组中的最后一项开始计数。\nconst array1 = [5, 12, 8, 130, 44]; undefined console.log(array1.at(3)) \/\/ 130  Array.concat() concat()方法用于合并两个或多个数组。此方法不会更改现有数组，而是返回一个新数组。\nconst a = [\x27a\x27, \x27b\x27, \x27c\x27]; const b = [\x27d\x27, \x27e\x27, \x27f\x27]; const c = a.",
+    "inLanguage" : "zh-ch",
+    "author" : "赵凯",
+    "creator" : "赵凯",
+    "publisher": "赵凯",
+    "accountablePerson" : "赵凯",
+    "copyrightHolder" : "赵凯",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-07-26 17:38:29 \x2b0800 CST",
+    "dateModified" : "2020-07-26 17:38:29 \x2b0800 CST",
+    "url" : "https:\/\/1060146865.github.io\/2020\/js%E6%95%B0%E7%BB%84\/",
+    "wordCount" : "2487",
+    "keywords" : [  "赵凯的博客"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://1060146865.github.io">赵凯的博客</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://1060146865.github.io">赵凯的博客</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">JS 数组</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://1060146865.github.io" rel="author">赵凯</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-07-26 itemprop="datePublished">July 26, 2020</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<h1 id="js数组">js数组</h1>
+
+<p>数组是一种类列表对象，它的原型中提供了遍历和修改元素的相关操作。JavaScript 数组的长度和元素类型都是非固定的。因为数组的长度可随时改变，并且其数据在内存中也可以不连续，所以 JavaScript 数组不一定是密集型的，这取决于它的使用方式。只能用整数作为数组元素的索引，而不能用字符串。</p>
+
+<h1 id="创建数组">创建数组</h1>
+
+<pre><code class="language-javascript">let a =[1,2,3]
+let a = new Array(&quot;1&quot;,&quot;2&quot;,&quot;3&quot;)
+</code></pre>
+
+<h1 id="数组的静态方法">数组的静态方法</h1>
+
+<p><code>Array.isArray()</code></p>
+
+<p>Array.isArray方法返回一个布尔值，表示参数是否为数组。它可以弥补typeof运算符的不足。</p>
+
+<pre><code class="language-javascript">var arr = [1, 2, 3];
+
+typeof arr // &quot;object&quot;
+Array.isArray(arr) // true
+</code></pre>
+
+<h1 id="数组的实例方法">数组的实例方法</h1>
+
+<h3 id="array-length">Array.length</h3>
+
+<p>返回或设置一个数组中的元素个数。该值是一个无符号 32-bit 整数，并且总是大于数组最高项的下标。</p>
+
+<pre><code class="language-javascript">const a =[1,2,3];
+console.log(a.length);
+// 3
+</code></pre>
+
+<h3 id="array-at">Array.at()</h3>
+
+<p>at()方法接受一个整数值并返回该索引处的项目，允许正整数和负整数。负整数从数组中的最后一项开始计数。</p>
+
+<pre><code class="language-javascript">const array1 = [5, 12, 8, 130, 44];
+undefined
+console.log(array1.at(3))
+// 130
+</code></pre>
+
+<h3 id="array-concat">Array.concat()</h3>
+
+<p>concat()方法用于合并两个或多个数组。此方法不会更改现有数组，而是返回一个新数组。</p>
+
+<pre><code class="language-javascript">const a = ['a', 'b', 'c'];
+const b = ['d', 'e', 'f'];
+const c = a.concat(b);
+
+console.log(c);
+//Array [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;]
+</code></pre>
+
+<h3 id="array-copywithin">Array.copyWithin()</h3>
+
+<p>copyWithin()方法将数组的一部分浅复制到同一数组中的另一个位置，并在不修改其长度的情况下返回它。</p>
+
+<p><code>返回值</code>:修改后的数组。</p>
+
+<p><code>copyWithin</code>(target, start, end)</p>
+
+<p><code>target</code>
+将序列复制到的从零开始的索引。如果为负数，target 将从最后开始计数。</p>
+
+<p>如果target等于或大于arr.length，则不会复制任何内容。如果target位于之后start，复制的序列将被修剪以适应arr.length。</p>
+
+<p><code>start</code> 可选的
+从零开始复制元素的索引。如果为负数， start将从最后开始计数。</p>
+
+<p>如果start省略，copyWithin将从 index 复制 0。</p>
+
+<p><code>end</code> 可选的
+从零开始复制元素的索引。copyWithin 复制最多但不包括end. 如果为负数，end将从最后开始计数。</p>
+
+<p>如果end省略，copyWithin将复制到最后一个索引（默认为arr.length）。</p>
+
+<pre><code class="language-javascript">const array1 = ['a', 'b', 'c', 'd', 'e'];
+
+console.log(array1.copyWithin(0, 3, 4));
+// expected output: Array [&quot;d&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;]
+
+console.log(array1.copyWithin(1, 3));
+// expected output: Array [&quot;d&quot;, &quot;d&quot;, &quot;e&quot;, &quot;d&quot;, &quot;e&quot;]
+
+</code></pre>
+
+<h3 id="array-entries">Array.entries()</h3>
+
+<p>entries()方法返回一个新的数组迭代器对象，该对象包含数组中每个索引的键/值对。</p>
+
+<p><code>返回值</code>: 一个新的Array迭代器对象。</p>
+
+<pre><code class="language-javascript">const array1 = ['a', 'b', 'c'];
+
+const iterator1 = array1.entries();
+
+console.log(iterator1.next().value);
+// expected output: Array [0, &quot;a&quot;]
+
+console.log(iterator1.next().value);
+// expected output: Array [1, &quot;b&quot;]
+
+
+
+使用索引和元素进行迭代
+const a = ['a', 'b', 'c'];
+
+for (const [index, element] of a.entries())
+  console.log(index, element);
+
+// 0 'a'
+// 1 'b'
+// 2 'c'
+
+
+使用for…of循环
+var a = ['a', 'b', 'c'];
+var iterator = a.entries();
+
+for (let e of iterator) {
+  console.log(e);
+}
+// [0, 'a']
+// [1, 'b']
+// [2, 'c']
+</code></pre>
+
+<h3 id="array-every">Array.every()</h3>
+
+<p>every()方法测试数组中的所有元素是否通过提供的函数实现的测试。它返回一个布尔值。</p>
+
+<p><code>返回值</code>: true如果callbackFn函数为每个数组元素返回一个真值。否则， false。</p>
+
+<pre><code class="language-javascript">every(function callbackFn(element) { ... })
+every(function callbackFn(element, index) { ... })
+every(function callbackFn(element, index, array){ ... })
+every(function callbackFn(element, index, array) { ... }, thisArg)
+
+
+[12, 5, 8, 130, 44].every(x =&gt; x &gt;= 10);   // false
+[12, 54, 18, 130, 44].every(x =&gt; x &gt;= 10); // true
+
+
+const array1 = [1, 30, 39, 29, 10, 13];
+array1.every(function e (element,index,array){
+    console.log(element)
+    console.log(index)
+    console.log(array)
+})
+
+</code></pre>
+
+<h3 id="array-fill">Array.fill()</h3>
+
+<p>fill()方法将数组中的所有元素更改为静态值，从开始索引（默认0）到结束索引（默认array.length）。它返回修改后的数组。</p>
+
+<p><code>返回值</code>:修改后的数组，填充了value.</p>
+
+<p><code>fill(value, start, end)</code></p>
+
+<p><code>value</code>
+用于填充数组的值。（注意数组中的所有元素都将是这个确切的值。）</p>
+
+<p><code>start</code> 可选的
+起始索引（含），默认0.</p>
+
+<p><code>end</code> 可选的
+结束索引（独占），默认arr.length.</p>
+
+<p>注意：Array.prototype.fill()在空数组上使用不会修改它，因为数组没有要修改的内容。
+如果start为负，则将其视为array.length + start。
+如果end为负，则将其视为array.length + end。</p>
+
+<pre><code class="language-javascript">const array1 = [1, 2, 3, 4];
+
+// fill with 0 from position 2 until position 4
+console.log(array1.fill(0, 2, 4));
+// expected output: [1, 2, 0, 0]
+
+// fill with 5 from position 1
+console.log(array1.fill(5, 1));
+// expected output: [1, 5, 5, 5]
+
+console.log(array1.fill(6));
+// expected output: [6, 6, 6, 6]
+
+</code></pre>
+
+<pre><code class="language-javascript">[1, 2, 3].fill(4)                // [4, 4, 4]
+[1, 2, 3].fill(4, 1)             // [1, 4, 4]
+[1, 2, 3].fill(4, 1, 2)          // [1, 4, 3]
+[1, 2, 3].fill(4, 1, 1)          // [1, 2, 3]
+[1, 2, 3].fill(4, 3, 3)          // [1, 2, 3]
+[1, 2, 3].fill(4, -3, -2)        // [4, 2, 3]
+[1, 2, 3].fill(4, NaN, NaN)      // [1, 2, 3]
+[1, 2, 3].fill(4, 3, 5)          // [1, 2, 3]
+Array(3).fill(4)                 // [4, 4, 4]
+[].fill.call({ length: 3 }, 4)   // {0: 4, 1: 4, 2: 4, length: 3}
+
+// A single object, referenced by each slot of the array:
+let arr = Array(3).fill({}) // [{}, {}, {}]
+arr[0].hi = &quot;hi&quot;            // [{ hi: &quot;hi&quot; }, { hi: &quot;hi&quot; }, { hi: &quot;hi&quot; }]
+</code></pre>
+
+<h3 id="array-filter">Array.filter()</h3>
+
+<p>filter()方法创建一个新数组，其中包含通过提供的函数实现的测试的所有元素。</p>
+
+<p><code>返回值</code>:包含通过测试的元素的<code>新数组</code>。如果没有元素通过测试，将返回一个<code>空数组</code>。</p>
+
+<p>callbackFn
+函数是一个谓词，用来测试数组的每个元素。返回一个强制true保留元素的值，false否则。</p>
+
+<p>它接受三个参数：</p>
+
+<p><code>element</code>
+数组中正在处理的当前元素。</p>
+
+<p><code>index可选的</code>
+数组中正在处理的当前元素的索引。</p>
+
+<p><code>array可选的</code>
+该数组filter被调用。</p>
+
+<p><code>thisArg可选的</code>
+this执行时使用的值callbackFn。</p>
+
+<p><code>filter(function callbackFn(element, index, array) { ... }, thisArg)</code></p>
+
+<pre><code class="language-javascript">const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+
+const result = words.filter(word =&gt; word.length &gt; 6);
+
+console.log(result);
+// expected output: Array [&quot;exuberant&quot;, &quot;destruction&quot;, &quot;present&quot;]
+
+</code></pre>
+
+<pre><code class="language-javascript">查找数组中的所有素数
+const array = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+
+function isPrime(num) {
+  for (let i = 2; num &gt; i; i++) {
+    if (num % i == 0) {
+      return false;
+    }
+  }
+  return num &gt; 1;
+}
+
+console.log(array.filter(isPrime)); // [2, 3, 5, 7, 11, 13]
+
+
+
+从 JSON 过滤无效条目
+
+let arr = [
+  { id: 15 },
+  { id: -1 },
+  { id: 0 },
+  { id: 3 },
+  { id: 12.2 },
+  { },
+  { id: null },
+  { id: NaN },
+  { id: 'undefined' }
+]
+
+let invalidEntries = 0
+
+function filterByID(item) {
+  if (Number.isFinite(item.id) &amp;&amp; item.id !== 0) {
+    return true
+  }
+  invalidEntries++
+  return false;
+}
+
+let arrByID = arr.filter(filterByID)
+
+console.log('Filtered Array\n', arrByID)
+// Filtered Array
+// [{ id: 15 }, { id: -1 }, { id: 3 }, { id: 12.2 }]
+
+console.log('Number of Invalid Entries = ', invalidEntries)
+// Number of Invalid Entries = 5
+
+
+
+在数组中搜索
+let fruits = ['apple', 'banana', 'grapes', 'mango', 'orange']
+
+/**
+ * Filter array items based on search criteria (query)
+ */
+function filterItems(arr, query) {
+  return arr.filter(function(el) {
+    return el.toLowerCase().indexOf(query.toLowerCase()) !== -1
+  })
+}
+
+console.log(filterItems(fruits, 'ap'))  //['apple', 'grapes']
+console.log(filterItems(fruits, 'an'))  //['banana', 'mango', 'orange']
+
+</code></pre>
+
+<h3 id="array-find">Array.find()</h3>
+
+<p>find()方法返回提供的数组中满足提供的测试函数的第一个元素的值。如果没有值满足测试函数，undefined则返回。</p>
+
+<p><code>返回值</code>:数组中满足提供的测试函数的第一个元素 的值。否则，被退回。 undefined</p>
+
+<p><code>find(function callbackFn(element, index, array) { ... }, thisArg)</code></p>
+
+<p>callbackFn
+对数组中的每个值执行的函数，采用 3 个参数：</p>
+
+<p>element
+数组中的当前元素。</p>
+
+<p>index 可选的
+数组中当前元素的索引（位置）。</p>
+
+<p>array 可选的
+find被调用的数组。</p>
+
+<p>thisArg 可选的
+用作thisinside 的 对象callbackFn。</p>
+
+<pre><code class="language-javascript">const array1 = [5, 12, 8, 130, 44];
+
+const found = array1.find(element =&gt; element &gt; 10);
+
+console.log(found);
+// expected output: 12
+
+
+通过其属性之一在数组中查找对象
+const inventory = [
+  {name: 'apples', quantity: 2},
+  {name: 'bananas', quantity: 0},
+  {name: 'cherries', quantity: 5}
+];
+
+function isCherries(fruit) {
+  return fruit.name === 'cherries';
+}
+
+console.log(inventory.find(isCherries));
+// { name: 'cherries', quantity: 5 }
+
+
+
+使用箭头函数和解构
+const inventory = [
+  {name: 'apples', quantity: 2},
+  {name: 'bananas', quantity: 0},
+  {name: 'cherries', quantity: 5}
+];
+
+const result = inventory.find( ({ name }) =&gt; name === 'cherries' );
+
+console.log(result) // { name: 'cherries', quantity: 5 }
+
+
+</code></pre>
+
+<h3 id="array-findindex">Array.findIndex()</h3>
+
+<p>findIndex()方法返回数组中满足提供的测试函数的第一个元素的索引。否则，它返回，表示没有元素通过测试。 -1</p>
+
+<p><code>返回值</code>:通过测试的数组中第一个元素的索引。否则， -1。</p>
+
+<p><code>findIndex(function callbackFn(element, index, array) { ... }, thisArg)</code></p>
+
+<pre><code class="language-javascript">const array1 = [5, 12, 8, 130, 44];
+
+const isLargeNumber = (element) =&gt; element &gt; 13;
+
+console.log(array1.findIndex(isLargeNumber));
+// expected output: 3
+
+
+查找数组中素数的索引
+function isPrime(num) {
+  for (let i = 2; num &gt; i; i++) {
+    if (num % i == 0) {
+      return false;
+    }
+  }
+  return num &gt; 1;
+}
+
+console.log([4, 6, 8, 9, 12].findIndex(isPrime)); // -1, not found
+console.log([4, 6, 7, 9, 12].findIndex(isPrime)); // 2 (array[2] is 7)
+
+使用箭头函数查找索引
+const fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cantaloupe&quot;, &quot;blueberries&quot;, &quot;grapefruit&quot;];
+
+const index = fruits.findIndex(fruit =&gt; fruit === &quot;blueberries&quot;);
+
+console.log(index); // 3
+console.log(fruits[index]); // blueberries
+
+
+</code></pre>
+
+<h3 id="array-flat">Array.flat()</h3>
+
+<p>flat() 方法会按照一个可指定的深度循环数组，将所有元素与遍历到的子数组中的元素合并为一个新数组返回。</p>
+
+<p><code>返回值</code>:一个包含将数组与子数组中所有元素的新数组。</p>
+
+<p><code>flat(depth)</code></p>
+
+<p>depth 可选的
+指定嵌套数组结构应展平的深度的深度级别。默认为 1。</p>
+
+<pre><code class="language-javascript">
+const arr1 = [0, 1, 2, [3, 4]];
+
+console.log(arr1.flat());
+// expected output: [0, 1, 2, 3, 4]
+
+const arr2 = [0, 1, 2, [[[3, 4]]]];
+
+console.log(arr2.flat(3));
+// expected output: [0, 1, 2, [3, 4]]
+
+
+
+使用 Infinity，可展开任意深度的嵌套数组
+var arr4 = [1, 2, [3, 4, [5, 6, [7, 8, [9, 10]]]]];
+arr4.flat(Infinity);
+// [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+flat() 方法会移除数组中的空项：
+var arr4 = [1, 2, , 4, 5];
+arr4.flat();
+// [1, 2, 4, 5]
+
+
+使用reduce与concat
+var arr = [1, 2, [3, 4]];
+
+// 展开一层数组
+arr.flat();
+// 等效于
+arr.reduce((acc, val) =&gt; acc.concat(val), []);
+// [1, 2, 3, 4]
+
+// 使用扩展运算符 ...
+const flattened = arr =&gt; [].concat(...arr);
+
+</code></pre>
+
+<h3 id="array-flatmap">Array.flatMap()</h3>
+
+<p>flatMap()方法返回一个新数组，该数组通过将给定的回调函数应用于数组的每个元素，然后将结果展平一级而形成。它与深度为 1 的map() 几乎相同，但比分别调用这两个方法效率稍高。</p>
+
+<p><code>flatMap(function callbackFn(currentValue, index, array) { ... }, thisArg)</code></p>
+
+<pre><code class="language-javascript">map() 与 flatMap()
+var arr1 = [1, 2, 3, 4];
+
+arr1.map(x =&gt; [x * 2]);
+// [[2], [4], [6], [8]]
+
+arr1.flatMap(x =&gt; [x * 2]);
+// [2, 4, 6, 8]
+
+// only one level is flattened
+arr1.flatMap(x =&gt; [[x * 2]]);
+// [[2], [4], [6], [8]]
+
+</code></pre>
+
+<h3 id="array-foreach">Array.forEach()</h3>
+
+<p>forEach() 方法对每个元素执行一次给定的函数。</p>
+
+<p><code>返回值</code>:undefined</p>
+
+<p><code>forEach(function callbackFn(element, index, array) { ... }, thisArg)</code></p>
+
+<p>注意：除了抛出异常以外，没有办法中止或跳出forEach()循环。如果你需要停止或跳出循环，则forEach()不是应该使用的工具。</p>
+
+<pre><code class="language-javascript">将 for 循环转换为 forEach
+const items = ['item1', 'item2', 'item3']
+const copyItems = []
+
+// before
+for (let i = 0; i &lt; items.length; i++) {
+  copyItems.push(items[i])
+}
+
+// after
+items.forEach(function(item){
+  copyItems.push(item)
+})
+
+
+以下代码为数组中的每个元素记录一行：
+
+function logArrayElements(element, index, array) {
+  console.log('a[' + index + '] = ' + element)
+}
+
+[2, 5, , 9].forEach(logArrayElements)
+// logs:
+// a[0] = 2
+// a[1] = 5
+// a[3] = 9
+
+
+</code></pre>
+
+<h3 id="array-from">Array.from()</h3>
+
+<p>Array.from() 方法从一个类似的数组或可迭代对象创建一个新的、浅实例的实例。</p>
+
+<p><code>返回值</code>:一个新的数组实例。</p>
+
+<p><code>Array.from(arrayLike, function mapFn(element, index) { ... }, thisArg)</code></p>
+
+<p>arrayLike
+要转换为数组的类数组或可迭代对象。</p>
+
+<p>mapFn 可选的
+Map 函数调用数组的每个元素。</p>
+
+<p>thisArg 可选的
+this执行时使用的值mapFn。</p>
+
+<pre><code class="language-javascript">console.log(Array.from('foo'));
+// expected output: Array [&quot;f&quot;, &quot;o&quot;, &quot;o&quot;]
+
+console.log(Array.from([1, 2, 3], x =&gt; x + x));
+// expected output: Array [2, 4, 6]
+
+
+从Set生成数组
+const set = new Set(['foo', 'bar', 'baz', 'foo']);
+Array.from(set);
+// [ &quot;foo&quot;, &quot;bar&quot;, &quot;baz&quot; ]
+
+从Map生成数组
+const map = new Map([[1, 2], [2, 4], [4, 8]]);
+Array.from(map);
+// [[1, 2], [2, 4], [4, 8]]
+
+const mapper = new Map([['1', 'a'], ['2', 'b']]);
+Array.from(mapper.values());
+// ['a', 'b'];
+
+Array.from(mapper.keys());
+// ['1', '2'];
+
+从类数组对象（参数）生成数组
+function f() {
+  return Array.from(arguments);
+}
+
+f(1, 2, 3);
+
+// [ 1, 2, 3 ]
+
+</code></pre>
+
+<h3 id="array-includes">Array.includes()</h3>
+
+<p>includes()方法确定数组是否在其条目中包含某个值，返回true或 false。</p>
+
+<p><code>返回值</code>:一个布尔值，即true该值 searchElement是否在数组（或由 index 指示的数组部分fromIndex，如果指定）中找到。</p>
+
+<p>无论符号如何，零值都被认为是相等的。（即， -0被认为是等于两个0和+0），但false是不被认为是一样的0。</p>
+
+<p><code>includes(searchElement, fromIndex)</code></p>
+
+<p>searchElement
+要搜索的值。</p>
+
+<p>注意：当比较字符串和字符， includes()是区分大小写的。</p>
+
+<p>fromIndex 可选的
+在此数组中开始搜索的位置 searchElement。</p>
+
+<p>要搜索的第一个元素在fromIndex的正值处找到fromIndex，或在 arr.length + fromIndex的负值处找到 fromIndex（使用绝对值offromIndex作为从数组末尾开始搜索的元素数）。</p>
+
+<p>默认为0.</p>
+
+<pre><code class="language-javascript">[1, 2, 3].includes(2)         // true
+[1, 2, 3].includes(4)         // false
+[1, 2, 3].includes(3, 3)      // false
+[1, 2, 3].includes(3, -1)     // true
+[1, 2, NaN].includes(NaN)     // true
+[&quot;1&quot;, &quot;2&quot;, &quot;3&quot;].includes(3)   // false
+
+
+如果fromIndex大于或等于数组的长度，false则返回。不会搜索数组。
+
+let arr = ['a', 'b', 'c']
+
+arr.includes('c', 3)    // false
+arr.includes('c', 100)  // false
+</code></pre>
+
+<h3 id="array-indexof">Array.indexOf()</h3>
+
+<p>indexOf()方法返回在数组中可以找到一个给定元素的第一个索引，如果不存在，则返回-1。</p>
+
+<p><code>返回值</code>:首个被找到的元素在数组中的索引位置；如果没有找到则返回-1</p>
+
+<p><code>indexOf(searchElement, fromIndex)</code></p>
+
+<p>searchElement
+要查找的元素
+fromIndex 任选
+开始查找的位置。如果该索引值大于或等于整个长度，则参数可能会在数组里查找，返回-1。即-1表示从最后一个元素开始查找，-2表示从倒数第二个元素开始查找，以此类推。仍然是从前向后查询数组。如果以后的索引值仍然小于0，则整个数组都会被查询。默认值为0。</p>
+
+<pre><code class="language-javascript">下面举例使用indexOf方法确定多个值在数组中的位置。
+
+var array = [2, 5, 9];
+array.indexOf(2);     // 0
+array.indexOf(7);     // -1
+array.indexOf(9, 2);  // 2
+array.indexOf(2, -1); // -1
+array.indexOf(2, -3); // 0
+
+</code></pre>
+
+<h3 id="array-isarray">Array.isArray()</h3>
+
+<p>Array.isArray() 用于确定传递的值是否是一个Array。</p>
+
+<p>返回值:true如果值是一个Array；否则， false。</p>
+
+<pre><code class="language-javascript">Array.isArray([1, 2, 3]);  // true
+Array.isArray({foo: 123}); // false
+Array.isArray('foobar');   // false
+Array.isArray(undefined);  // false
+
+</code></pre>
+
+<h3 id="array-join">Array.join()</h3>
+
+<p>join()方法通过连接数组（或类似数组的对象）中的所有元素来创建并返回一个新字符串，用逗号或指定的分隔符字符串分隔。如果数组只有一项，则将在不使用分隔符的情况下返回该项。</p>
+
+<p>返回值:连接了所有数组元素的字符串。如果arr.length是 0，则返回空字符串。</p>
+
+<p>如果一个元素为 undefined 或 null，它会被转换为空字符串。</p>
+
+<pre><code class="language-javascript">var a = ['Wind', 'Water', 'Fire'];
+a.join();      // 'Wind,Water,Fire'
+a.join(', ');  // 'Wind, Water, Fire'
+a.join(' + '); // 'Wind + Water + Fire'
+a.join('');    // 'WindWaterFire'
+
+连接类数组对象
+function f(a, b, c) {
+  var s = Array.prototype.join.call(arguments);
+  console.log(s); // '1,a,true'
+}
+f(1, 'a', true);
+//expected output: &quot;1,a,true&quot;
+
+</code></pre>
+
+<h3 id="array-keys">Array.keys()</h3>
+
+<p>keys() 方法返回一个包含数组中索引键的Array Iterator对象。</p>
+
+<p>返回值:一个新的Array迭代器对象。</p>
+
+<pre><code class="language-javascript">const array1 = ['a', 'b', 'c'];
+const iterator = array1.keys();
+
+for (const key of iterator) {
+  console.log(key);
+}
+
+// expected output: 0
+// expected output: 1
+// expected output: 2
+
+
+
+对应的元素会包含那些元素的索引
+var arr = [&quot;a&quot;, , &quot;c&quot;];
+var sparseKeys = Object.keys(arr);
+var denseKeys = [...arr.keys()];
+console.log(sparseKeys); // ['0', '2']
+console.log(denseKeys);  // [0, 1, 2]
+
+</code></pre>
+
+<h3 id="array-lastindexof">Array.lastIndexOf()</h3>
+
+<p>lastIndexOf()方法返回指定元素（也即有效的 JavaScript 值或变量）在数组中的最后一个索引，如果不存在则返回 -1 fromIndex。</p>
+
+<p><code>lastIndexOf(searchElement, fromIndex)</code></p>
+
+<p>返回值:数组中该元素最后一次出现的索引，如未找到返回-1。</p>
+
+<pre><code class="language-javascript">const animals = ['Dodo', 'Tiger', 'Penguin', 'Dodo'];
+
+console.log(animals.lastIndexOf('Dodo'));
+// expected output: 3
+
+console.log(animals.lastIndexOf('Tiger'));
+// expected output: 1
+
+</code></pre>
+
+<h3 id="array-map">Array.map()</h3>
+
+<p>map() 方法创建一个新数组，其结果是该数组中的每个元素是调用一次提供的函数后的返回值。</p>
+
+<p><code>map(function callbackFn(element, index, array) { ... }, thisArg)</code></p>
+
+<p>返回值:一个由原每个元素执行功能的结果组成的新数组。</p>
+
+<pre><code class="language-javascript">const array1 = [1, 4, 9, 16];
+
+// pass a function to map
+const map1 = array1.map(x =&gt; x * 2);
+
+console.log(map1);
+// expected output: Array [2, 8, 18, 32]
+
+
+
+使用 map 重新格式化数组中的对象
+let kvArray = [{key: 1, value: 10},
+               {key: 2, value: 20},
+               {key: 3, value: 30}]
+
+let reformattedArray = kvArray.map(obj =&gt; {
+   let rObj = {}
+   rObj[obj.key] = obj.value
+   return rObj
+})
+// reformattedArray is now [{1: 10}, {2: 20}, {3: 30}],
+
+</code></pre>
+
+<h3 id="array-of">Array.of()</h3>
+
+<p>Array.of() 方法创建一个具有数量数量参数的新数组实例，而不是考虑参数的。</p>
+
+<p>Array.of() 和 Array 构造函数之间的区别在于处理实例：Array.of(7) 创建一个具有单个元素7的数组，而 Array(7) 创建一个长度为7个的空数组（注意：这是指一个有7个空位（空）的数组，而不是由7个undefined组成的数组）。</p>
+
+<p>返回值:新的Array实例。</p>
+
+<pre><code class="language-javascript">Array.of(7);       // [7]
+Array.of(1, 2, 3); // [1, 2, 3]
+
+Array(7);          // [ , , , , , , ]
+Array(1, 2, 3);    // [1, 2, 3]
+
+
+Array.of(1);         // [1]
+Array.of(1, 2, 3);   // [1, 2, 3]
+Array.of(undefined); // [undefined]
+</code></pre>
+
+<h3 id="array-pop">Array.pop()</h3>
+
+<p>pop()从数组中删除最后一个元素，并返回该元素的值。</p>
+
+<p>返回值:从数组中删除的元素（当数组为空时返回undefined）。</p>
+
+<pre><code class="language-javascript">const plants = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
+
+console.log(plants.pop());
+// expected output: &quot;tomato&quot;
+
+console.log(plants);
+// expected output: Array [&quot;broccoli&quot;, &quot;cauliflower&quot;, &quot;cabbage&quot;, &quot;kale&quot;]
+
+plants.pop();
+
+console.log(plants);
+// expected output: Array [&quot;broccoli&quot;, &quot;cauliflower&quot;, &quot;cabbage&quot;]
+
+
+let myFish = [&quot;angel&quot;, &quot;clown&quot;, &quot;mandarin&quot;, &quot;surgeon&quot;];
+
+let popped = myFish.pop();
+
+console.log(myFish);
+// [&quot;angel&quot;, &quot;clown&quot;, &quot;mandarin&quot;]
+
+console.log(popped);
+// surgeon
+
+
+</code></pre>
+
+<h3 id="array-push">Array.push()</h3>
+
+<p>push() 方法将一个或多个元素添加到汇总的详细信息中，并返回该数组的新长度。</p>
+
+<p>返回值:新的length属性值将被返回。</p>
+
+<pre><code class="language-javascript">var sports = [&quot;soccer&quot;, &quot;baseball&quot;];
+var total = sports.push(&quot;football&quot;, &quot;swimming&quot;);
+
+console.log(sports);
+// [&quot;soccer&quot;, &quot;baseball&quot;, &quot;football&quot;, &quot;swimming&quot;]
+
+console.log(total);
+// 4
+
+</code></pre>
+
+<h3 id="array-reduce">Array.reduce()</h3>
+
+<p>该reduce()方法在数组的每个元素上执行用户提供的“reducer”回调函数，传入前一个元素计算的返回值。在数组的所有元素上运行 reducer 的最终结果是单个值。</p>
+
+<p>也许最容易理解的情况reduce()是返回数组中所有元素的总和。</p>
+
+<p>reducer 逐个元素遍历数组，在每一步将当前数组值添加到上一步的结果（此结果是所有先前步骤的运行总和）——直到没有更多元素要添加。</p>
+
+<p><code>返回值</code>:函数累积处理的结果</p>
+
+<p><code>reduce(function callbackFn(previousValue, currentValue, currentIndex, array) { ... }, initialValue)</code></p>
+
+<p>callback
+执行数组中每个值（没有提供 initialValue则第一个值除外）的函数，包括四个参数：
+accumulator
+累积累积次数的返回值；是上一次调用时间返回的累计值，或initialValue（见底下）。</p>
+
+<p>currentValue
+数组中正在处理的元素。
+index 任选
+数组中正在处理的当前元素的索引initialValue。
+array任选
+调用reduce()的数组
+initialValue任选
+第作为一次调用 callback函数时的第一个参数的值。如果没有提供初始值，则将使用数组中的第一个元素。在没有初始值的空数组上调用减少将报错。</p>
+
+<pre><code class="language-javascript">累加对象数组里的值
+var initialValue = 0;
+var sum = [{x: 1}, {x:2}, {x:3}].reduce(function (accumulator, currentValue) {
+    return accumulator + currentValue.x;
+},initialValue)
+
+console.log(sum) // logs 6
+
+将二维数组转化为一维
+var flattened = [[0, 1], [2, 3], [4, 5]].reduce(
+  function(a, b) {
+    return a.concat(b);
+  },
+  []
+);
+// flattened is [0, 1, 2, 3, 4, 5]
+
+
+计算每个元素出现的次数
+var names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];
+
+var countedNames = names.reduce(function (allNames, name) {
+  if (name in allNames) {
+    allNames[name]++;
+  }
+  else {
+    allNames[name] = 1;
+  }
+  return allNames;
+}, {});
+// countedNames is:
+// { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }
+
+
+</code></pre>
+
+<h3 id="array-reduceright">Array.reduceRight()</h3>
+
+<p>reduce()方法和reduceRight()方法依次处理数组的每个成员，最终累计为一个值。它们的差别是，reduce()是从左到右处理（从第一个成员到最后一个成员），reduceRight()则是从右到左（从最后一个成员到第一个成员），其他完全一样。</p>
+
+<p><code>reduceRight(function callbackFn(accumulator, currentValue, index, array) { ... }, initialValue)</code></p>
+
+<p><code>返回值</code>:执行后的返回值</p>
+
+<pre><code class="language-javascript">总结一个数组中的所有值
+var sum = [0, 1, 2, 3].reduceRight(function(a, b) {
+  return a + b;
+});
+// sum is 6
+
+展平一个数组
+var flattened = [[0, 1], [2, 3], [4, 5]].reduceRight(function(a, b) {
+    return a.concat(b);
+}, []);
+// flattened is [4, 5, 2, 3, 0, 1]
+
+
+reduce和之间的区别reduceRight
+
+var a = ['1', '2', '3', '4', '5'];
+var left  = a.reduce(function(prev, cur)      { return prev + cur; });
+var right = a.reduceRight(function(prev, cur) { return prev + cur; });
+
+console.log(left);  // &quot;12345&quot;
+console.log(right); // &quot;54321&quot;
+
+
+</code></pre>
+
+<h3 id="array-reverse">Array.reverse()</h3>
+
+<p>reverse() 方法将数组中元素的位置颠倒，并返回该数组。数组的第一个元素会变成最后一个，数组的最后一个元素变成第一个。该方法会改变原数组。</p>
+
+<p><code>arr.reverse()</code></p>
+
+<p>返回值:颠倒后的数组</p>
+
+<pre><code class="language-javascript">const a = [1, 2, 3];
+
+console.log(a); // [1, 2, 3]
+
+a.reverse();
+
+console.log(a); // [3, 2, 1]
+</code></pre>
+
+<h3 id="array-shift">Array.shift()</h3>
+
+<p>shift() 方法从数组中删除第一个元素，并返回该元素的值。此方法更改数组的长度。</p>
+
+<p>arr.shift()</p>
+
+<p><code>返回值</code> :从数组中删除的元素; 如果数组为空则返回undefined 。</p>
+
+<pre><code class="language-javascript">以下代码显示了删除其第一个元素之前和之后的myFish数组。它还显示已删除的元素：
+
+let myFish = ['angel', 'clown', 'mandarin', 'surgeon'];
+
+console.log('调用 shift 之前: ' + myFish);
+// &quot;调用 shift 之前: angel,clown,mandarin,surgeon&quot;
+
+var shifted = myFish.shift();
+
+console.log('调用 shift 之后: ' + myFish);
+// &quot;调用 shift 之后: clown,mandarin,surgeon&quot;
+
+console.log('被删除的元素: ' + shifted);
+// &quot;被删除的元素: angel&quot;
+
+</code></pre>
+
+<h3 id="array-slice">Array.slice()</h3>
+
+<p>slice()方法将数组的一部分的浅拷贝返回到一个新的数组对象中，该对象从startto end （end不包括）中选择，其中start和end表示该数组中项目的索引。不会修改原始数组。</p>
+
+<p><code>slice(start, end)</code></p>
+
+<p><code>begin</code> 可选
+提取起始处的索引（从 0 开始），从该索引开始提取原数组元素。
+如果该参数为负数，则表示从原数组中的倒数第几个元素开始提取，slice(-2) 表示提取原数组中的倒数第二个元素到最后一个元素（包含最后一个元素）。
+如果省略 begin，则 slice 从索引 0 开始。
+如果 begin 超出原数组的索引范围，则会返回空数组。
+<code>end</code> 可选
+提取终止处的索引（从 0 开始），在该索引处结束提取原数组元素。slice 会提取原数组中索引从 begin 到 end 的所有元素（包含 begin，但不包含 end）。
+slice(1,4) 会提取原数组中从第二个元素开始一直到第四个元素的所有元素 （索引为 1, 2, 3的元素）。
+如果该参数为负数， 则它表示在原数组中的倒数第几个元素结束抽取。 slice(-2,-1) 表示抽取了原数组中的倒数第二个元素到最后一个元素（不包含最后一个元素，也就是只有倒数第二个元素）。
+如果 end 被省略，则 slice 会一直提取到原数组末尾。
+如果 end 大于数组的长度，slice 也会一直提取到原数组末尾。</p>
+
+<p>返回值:一个含有被提取元素的新数组。</p>
+
+<pre><code class="language-javascript">
+const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+
+console.log(animals.slice(2));
+// expected output: Array [&quot;camel&quot;, &quot;duck&quot;, &quot;elephant&quot;]
+
+console.log(animals.slice(2, 4));
+// expected output: Array [&quot;camel&quot;, &quot;duck&quot;]
+
+console.log(animals.slice(1, 5));
+// expected output: Array [&quot;bison&quot;, &quot;camel&quot;, &quot;duck&quot;, &quot;elephant&quot;]
+
+console.log(animals.slice(-2));
+// expected output: Array [&quot;duck&quot;, &quot;elephant&quot;]
+
+console.log(animals.slice(2, -1));
+// expected output: Array [&quot;camel&quot;, &quot;duck&quot;]
+
+
+</code></pre>
+
+<h3 id="array-some">Array.some()</h3>
+
+<p>some()方法测试数组中是否至少有一个元素通过了提供的函数实现的测试。如果在数组中找到一个元素，提供的函数为其返回真，则返回真；否则返回false。它不会修改数组。</p>
+
+<p><code>some(function callbackFn(element, index, array) { ... }, thisArg)</code></p>
+
+<p>callbackFn
+用于测试每个元素的函数，采用三个参数：</p>
+
+<p>element
+数组中正在处理的当前元素。</p>
+
+<p>index可选的
+数组中正在处理的当前元素的索引。</p>
+
+<p>array可选的
+该数组some()被调用。</p>
+
+<p>thisArg可选的
+this执行时使用的值callbackFn。</p>
+
+<p><code>返回值</code>:true如果回调函数返回数组中至少一个元素的真值。否则，false。</p>
+
+<p><code>注意：如果用一个空数组进行测试，在任何情况下它返回的都是false。</code></p>
+
+<pre><code class="language-javascript">[2, 5, 8, 1, 4].some(x =&gt; x &gt; 10);  // false
+[12, 5, 8, 1, 4].some(x =&gt; x &gt; 10); // true
+
+判断数组元素中是否存在某个值
+var fruits = ['apple', 'banana', 'mango', 'guava'];
+
+function checkAvailability(arr, val) {
+  return arr.some(function(arrVal) {
+    return val === arrVal;
+  });
+}
+
+checkAvailability(fruits, 'kela');   // false
+checkAvailability(fruits, 'banana'); // true
+
+
+</code></pre>
+
+<h3 id="array-sort">Array.sort()</h3>
+
+<p>sort() 方法用原地算法对数组的元素进行排序，并返回数组。</p>
+
+<p><code>sort(function compareFn(firstEl, secondEl) { ... })</code></p>
+
+<p>返回值:排序后的数组。请注意，数组已原地排序，并且不进行复制。</p>
+
+<pre><code class="language-javascript">
+[10111, 1101, 111].sort(function (a, b) {
+  return a - b;
+})
+// [111, 1101, 10111]
+
+</code></pre>
+
+<h3 id="array-splice">Array.splice()</h3>
+
+<p>splice() 方法通过删除或替换现有元素或者原地添加新的元素来修改数组,并以数组形式返回被修改的内容。此方法会改变原数组。</p>
+
+<p><code>splice(start, deleteCount, item1, item2, itemN)</code></p>
+
+<p><code>返回值</code>:由被删除的元素组成的一个数组。如果只删除了一个元素，则返回只包含一个元素的数组。如果没有删除元素，<code>则返回空数组</code>。</p>
+
+<pre><code class="language-javascript">从索引 0 的位置开始删除 2 个元素，插入&quot;parrot&quot;、&quot;anemone&quot;和&quot;blue&quot;
+
+var myFish = ['angel', 'clown', 'trumpet', 'sturgeon'];
+var removed = myFish.splice(0, 2, 'parrot', 'anemone', 'blue');
+
+// 运算后的 myFish: [&quot;parrot&quot;, &quot;anemone&quot;, &quot;blue&quot;, &quot;trumpet&quot;, &quot;sturgeon&quot;]
+// 被删除的元素: [&quot;angel&quot;, &quot;clown&quot;]
+
+
+
+</code></pre>
+
+<h3 id="array-tolocalestring">Array.toLocaleString()</h3>
+
+<p>toLocaleString() 返回一个字符串表示数组中的元素。数组中的元素将使用各自的 toLocaleString 方法转成字符串，这些字符串将使用一个特定语言环境的字符串（例如一个逗号 &ldquo;,&ldquo;）隔开。</p>
+
+<p><code>toLocaleString(locales, options);</code></p>
+
+<p><code>返回值</code>:表示数组元素的字符串。</p>
+
+<pre><code class="language-javascript">const array1 = [1, 'a', new Date('21 Dec 1997 14:12:00 UTC')];
+const localeString = array1.toLocaleString('en', { timeZone: 'UTC' });
+
+console.log(localeString);
+// expected output: &quot;1,a,12/21/1997, 2:12:00 PM&quot;,
+// This assumes &quot;en&quot; locale and UTC timezone - your results may vary
+</code></pre>
+
+<h3 id="array-tostring">Array.toString()</h3>
+
+<p>toString() 返回一个字符串，表示指定的数组及其元素。</p>
+
+<p><code>arr.toString()</code></p>
+
+<p><code>返回值</code>:一个表示指定的数组及其元素的字符串。</p>
+
+<pre><code class="language-javascript">const array1 = [1, 2, 'a', '1a'];
+
+console.log(array1.toString());
+// expected output: &quot;1,2,a,1a&quot;
+
+</code></pre>
+
+<h3 id="array-unshift">Array.unshift()</h3>
+
+<p>unshift() 方法将一个或多个元素添加到数组的开头，并返回该数组的新长度(该方法修改原有数组)。</p>
+
+<p><code>unshift(element0, element1, ... , elementN)</code></p>
+
+<p>返回值:当一个对象调用该方法时，返回其 length 属性值。</p>
+
+<pre><code class="language-javascript">let arr = [4,5,6];
+arr.unshift(1,2,3);
+console.log(arr); // [1, 2, 3, 4, 5, 6]
+
+arr = [4,5,6]; // 重置数组
+arr.unshift(1);
+arr.unshift(2);
+arr.unshift(3);
+console.log(arr); // [3, 2, 1, 4, 5, 6]
+
+
+</code></pre>
+
+<h3 id="array-values">Array.values()</h3>
+
+<p>values() 方法返回一个新的 Array Iterator 对象，该对象包含数组每个索引的值</p>
+
+<p>返回值:一个新的 Array 迭代对象。</p>
+
+<pre><code class="language-javascript">const array1 = ['a', 'b', 'c'];
+const iterator = array1.values();
+
+for (const value of iterator) {
+  console.log(value);
+}
+
+// expected output: &quot;a&quot;
+// expected output: &quot;b&quot;
+// expected output: &quot;c&quot;
+
+
+</code></pre>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>赵凯 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://1060146865.github.io/2020/js%E6%95%B0%E7%BB%84/>https://1060146865.github.io/2020/js%E6%95%B0%E7%BB%84/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://1060146865.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://1060146865.github.io/2020/js%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" class="prev" rel="prev" title="JS 的运算符和数据类型转换"><i class="iconfont icon-left"></i>&nbsp;JS 的运算符和数据类型转换</a>
+         
+        
+        <a href="https://1060146865.github.io/2020/js%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/" class="next" rel="next" title="JS 数组去重">JS 数组去重&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2021</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://1060146865.github.io">赵凯</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
