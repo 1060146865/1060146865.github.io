@@ -6,18 +6,125 @@
     <description>Recent content in Posts on 赵凯的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-ch</language>
-    <lastBuildDate>Thu, 30 Jul 2020 18:38:29 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 17 Aug 2020 17:53:29 +0800</lastBuildDate>
     
 	<atom:link href="https://1060146865.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>bind、call、apply</title>
-      <link>https://1060146865.github.io/2020/bindcallapply/</link>
+      <title>JS 防抖和节流</title>
+      <link>https://1060146865.github.io/2020/js%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/</link>
+      <pubDate>Mon, 17 Aug 2020 17:53:29 +0800</pubDate>
+      
+      <guid>https://1060146865.github.io/2020/js%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/</guid>
+      <description>是什么 本质上是优化高频率执行代码的一种手段
+如：浏览器的 resize、scroll、keypress、mousemove 等事件在触发时，会不断地调用绑定在事件上的回调函数，极大地浪费资源，降低前端性能
+为了优化体验，需要对这类事件进行调用次数的限制，对此我们就可以采用throttle（防抖）和debounce（节流）的方式来减少调用频率
+定义 节流: n 秒内只运行一次，若在 n 秒内重复触发，只有一次生效
+防抖: n 秒后在执行该事件，若在 n 秒内被重复触发，则重新计时 一个经典的比喻:
+想象每天上班大厦底下的电梯。把电梯完成一次运送，类比为一次函数的执行和响应
+假设电梯有两种运行策略 debounce 和 throttle，超时设定为15秒，不考虑容量限制
+电梯第一个人进来后，15秒后准时运送一次，这是节流
+电梯第一个人进来后，等待15秒。如果过程中又有人进来，15秒等待重新计时，直到15秒后开始运送，这是防抖
+代码实现 节流 完成节流可以使用时间戳与定时器的写法
+使用时间戳写法，事件会立即执行，停止触发后没有办法再次执行
+function throttled1(fn, delay = 500) { let oldtime = Date.now() return function (...args) { let newtime = Date.now() if (newtime - oldtime &amp;gt;= delay) { fn.apply(null, args) oldtime = Date.now() } } }  使用定时器写法，delay毫秒后第一次执行，第二次事件停止触发后依然会再一次执行
+function throttled2(fn, delay = 500) { let timer = null return function (.</description>
+    </item>
+    
+    <item>
+      <title>JS 宏任务微任务</title>
+      <link>https://1060146865.github.io/2020/js-%E5%AE%8F%E4%BB%BB%E5%8A%A1%E5%BE%AE%E4%BB%BB%E5%8A%A1/</link>
+      <pubDate>Fri, 14 Aug 2020 13:23:29 +0800</pubDate>
+      
+      <guid>https://1060146865.github.io/2020/js-%E5%AE%8F%E4%BB%BB%E5%8A%A1%E5%BE%AE%E4%BB%BB%E5%8A%A1/</guid>
+      <description>JS是单线程执行 &amp;ldquo;JS是单线程的&amp;rdquo;指的是JS 引擎线程。
+在浏览器环境中，有JS 引擎线程和渲染线程，且两个线程互斥。
+Node环境中，只有JS 线程。
+宿主 JS运行的环境。一般为浏览器或者Node。
+执行栈 是一个存储函数调用的栈结构，遵循先进后出的原则。
+js是单线程的 只有一个调用栈 调用栈按照先入后出的规则进行 在执行调用栈的时候会先执行同步任务, 调用栈在发现异步任务的时候会把异步任务放到队列里面,异步任务列为宏任务队列和微任务队列,队列都按照先入先出的规则
+事件循环是一个不断循环的机制,不断的去寻找可执行任务来执行,在执行完同步任务以后,会先执行微任务队列的任务,把微任务队列的任务清空以后才会去执行宏任务,这个时候浏览器可能会渲染,渲染以后再去执行宏任务 宏任务settimeout()和setinterval() 微任务Promise.then().catch().finally()
+首先执行宏任务,在调用栈为空的时候,事件循环优先于执行微任务,清空微任务队列才会看一下需不需要渲染,渲染以后事件循环再执行下一轮宏任务,如果此时宏任务的其中一轮结束后,也就是调用栈清空的时候,事件循环又发现微任务,还会执行微任务,并且清空微任务队列才会看下需不需要渲染,渲染之后事件循环在此执行下一轮宏任务,在没有其余微任务的时候,宏任务就可以一直清空宏任务队列了</description>
+    </item>
+    
+    <item>
+      <title>JS this</title>
+      <link>https://1060146865.github.io/2020/js-this/</link>
+      <pubDate>Tue, 11 Aug 2020 13:13:29 +0800</pubDate>
+      
+      <guid>https://1060146865.github.io/2020/js-this/</guid>
+      <description>this 函数的 this 关键字在 JavaScript 中的表现略有不同，此外，在严格模式和非严格模式之间也会有一些差别
+在绝大多数情况下，函数的调用方式决定了 this 的值（运行时绑定）
+this 关键字是函数运行时自动生成的一个内部对象，只能在函数内部使用，总指向调用它的对象
+举个例子：
+function baz() { // 当前调用栈是：baz // 因此，当前调用位置是全局作用域 console.log( &amp;quot;baz&amp;quot; ); bar(); // &amp;lt;-- bar的调用位置 } function bar() { // 当前调用栈是：baz --&amp;gt; bar // 因此，当前调用位置在baz中 console.log( &amp;quot;bar&amp;quot; ); foo(); // &amp;lt;-- foo的调用位置 } function foo() { // 当前调用栈是：baz --&amp;gt; bar --&amp;gt; foo // 因此，当前调用位置在bar中 console.log( &amp;quot;foo&amp;quot; ); } baz(); // &amp;lt;-- baz的调用位置  同时，this在函数执行过程中，this一旦被确定了，就不可以再更改
+var a = 10; var obj = { a: 20 } function fn() { this = obj; // 修改this，运行后会报错 console.</description>
+    </item>
+    
+    <item>
+      <title>JS原型和原型链</title>
+      <link>https://1060146865.github.io/2020/js%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/</link>
+      <pubDate>Mon, 10 Aug 2020 16:33:29 +0800</pubDate>
+      
+      <guid>https://1060146865.github.io/2020/js%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/</guid>
+      <description>原型 JavaScript 常被描述为一种基于原型的语言——每个对象拥有一个原型对象
+当试图访问一个对象的属性时，它不仅仅在该对象上搜寻，还会搜寻该对象的原型，以及该对象的原型的原型，依次层层向上搜索，直到找到一个名字匹配的属性或到达原型链的末尾
+准确地说，这些属性和方法定义在Object的构造器函数（constructor functions）之上的prototype属性上，而非实例对象本身
+下面举个例子：
+函数可以有属性。 每个函数都有一个特殊的属性叫作原型prototype
+function doSomething(){} console.log( doSomething.prototype ); //控制台输出 { constructor: ƒ doSomething(), __proto__: { constructor: ƒ Object(), hasOwnProperty: ƒ hasOwnProperty(), isPrototypeOf: ƒ isPrototypeOf(), propertyIsEnumerable: ƒ propertyIsEnumerable(), toLocaleString: ƒ toLocaleString(), toString: ƒ toString(), valueOf: ƒ valueOf() } }  上面这个对象，就是大家常说的原型对象
+可以看到，原型对象有一个自有属性constructor，这个属性指向该函数，如下图关系展示
+原型链 原型对象也可能拥有原型，并从中继承方法和属性，一层一层、以此类推。这种关系常被称为原型链 (prototype chain)，它解释了为何一个对象会拥有定义在其他对象中的属性和方法
+在对象实例和它的构造器之间建立一个链接（它是proto属性，是从构造函数的prototype属性派生的），之后通过上溯原型链，在构造器中找到这些属性和方法
+下面举个例子：
+function Person(name) { this.name = name; this.age = 18; this.sayName = function() { console.log(this.name); } } // 第二步 创建实例 var person = new Person(&#39;person&#39;)  根据代码，我们可以得到下图</description>
+    </item>
+    
+    <item>
+      <title>JS 闭包是什么？闭包的使用场景？</title>
+      <link>https://1060146865.github.io/2020/js%E9%97%AD%E5%8C%85%E6%98%AF%E4%BB%80%E4%B9%88%E9%97%AD%E5%8C%85%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF-copy/</link>
+      <pubDate>Fri, 07 Aug 2020 14:23:29 +0800</pubDate>
+      
+      <guid>https://1060146865.github.io/2020/js%E9%97%AD%E5%8C%85%E6%98%AF%E4%BB%80%E4%B9%88%E9%97%AD%E5%8C%85%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF-copy/</guid>
+      <description>闭包是什么? 一个函数和对其周围状态的引用捆绑在一起（或者说函数被引用包围），这样的组合就是闭包
+也就是说，闭包让你可以在一个内层函数中访问到其外层函数的作用域
+在 JavaScript中，每当创建一个函数，闭包就会在函数创建的同时被创建出来，作为函数内部与外部连接起来的一座桥梁
+function init() { var name = &amp;quot;Mozilla&amp;quot;; // name 是一个被 init 创建的局部变量 function displayName() { // displayName() 是内部函数，一个闭包 alert(name); // 使用了父函数中声明的变量 } displayName(); } init();  使用场景 任何闭包的使用场景都离不开这两点：
+ 创建私有变量 延长变量的生命周期 一般函数的词法环境在函数返回后就被销毁，但是闭包会保存对创建时所在词法环境的引用，即便创建时所在的执行上下文被销毁，但创建时所在词法环境依然存在，以达到延长变量的生命周期的目的  柯里化函数 柯里化的目的在于避免频繁调用具有相同参数函数的同时，又能够轻松的重用
+// 假设我们有一个求长方形面积的函数 function getArea(width, height) { return width * height } // 如果我们碰到的长方形的宽老是10 const area1 = getArea(10, 20) const area2 = getArea(10, 30) const area3 = getArea(10, 40) // 我们可以使用闭包柯里化这个计算面积的函数 function getArea(width) { return height =&amp;gt; { return width * height } } const getTenWidthArea = getArea(10) // 之后碰到宽度为10的长方形就可以这样计算面积 const area1 = getTenWidthArea(20) // 而且如果遇到宽度偶尔变化也可以轻松复用 const getTwentyWidthArea = getArea(20)  使用闭包模拟私有方法 在JavaScript中，没有支持声明私有变量，但我们可以使用闭包来模拟私有方法</description>
+    </item>
+    
+    <item>
+      <title>JS 深拷贝浅拷贝的区别？如何实现一个深拷贝？</title>
+      <link>https://1060146865.github.io/2020/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%B5%85%E6%8B%B7%E8%B4%9D%E7%9A%84%E5%8C%BA%E5%88%AB%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E6%B7%B1%E6%8B%B7%E8%B4%9D/</link>
+      <pubDate>Mon, 03 Aug 2020 11:24:29 +0800</pubDate>
+      
+      <guid>https://1060146865.github.io/2020/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%B5%85%E6%8B%B7%E8%B4%9D%E7%9A%84%E5%8C%BA%E5%88%AB%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E6%B7%B1%E6%8B%B7%E8%B4%9D/</guid>
+      <description>JavaScript中存在两大数据类型： 基本类型 引用类型
+基本类型数据保存在在栈内存中
+引用类型数据保存在堆内存中，引用数据类型的变量是一个指向堆内存中实际对象的引用，存在栈中
+浅拷贝与深拷贝 浅拷贝，指的是创建新的数据，这个数据有着原始数据属性值的一份精确拷贝。如果属性是基本类型，拷贝的就是基本类型的值。如果属性是引用类型，拷贝的就是内存地址
+即浅拷贝是拷贝一层，深层次的引用类型则共享内存地址，所以如果其中一个对象改变了这个地址，就会影响到另一个对象。
+深拷贝是将一个对象从内存中完整的拷贝一份出来,从堆内存中开辟一个新的区域存放新对象,且修改新对象不会影响原对象。
+赋值和深/浅拷贝的区别 这三者的区别如下，不过比较的前提都是针对引用类型：
+ 当我们把一个对象赋值给一个新的变量时，赋的其实是该对象的在栈中的地址，而不是堆中的数据。也就是两个对象指向的是同一个存储空间，无论哪个对象发生改变，其实都是改变的存储空间的内容，因此，两个对象是联动的。 浅拷贝：重新在堆中创建内存，拷贝前后对象的基本数据类型互不影响，但拷贝前后对象的引用类型因共享同一块内存，会相互影响。 深拷贝：从堆内存中开辟一个新的区域存放新对象，对对象中的子对象进行递归拷贝,拷贝前后的两个对象互不影响。  浅拷贝 下面简单实现一个浅拷贝
+function shallowClone(obj) { const newObj = {}; for(let prop in obj) { if(obj.hasOwnProperty(prop)){ newObj[prop] = obj[prop]; } } return newObj; }  在JavaScript中，存在浅拷贝的现象有：
+Object.assign Array.prototype.slice(), Array.prototype.concat() 使用拓展运算符实现的复制 #Object.assign
+var obj = { age: 18, nature: [&#39;smart&#39;, &#39;good&#39;], names: { name1: &#39;fx&#39;, name2: &#39;xka&#39; }, love: function () { console.log(&#39;fx is a great girl&#39;) } } var newObj = Object.</description>
+    </item>
+    
+    <item>
+      <title>JS bind、call、apply</title>
+      <link>https://1060146865.github.io/2020/js-bindcallapply/</link>
       <pubDate>Thu, 30 Jul 2020 18:38:29 +0800</pubDate>
       
-      <guid>https://1060146865.github.io/2020/bindcallapply/</guid>
-      <description>bind、call、apply都是用来指定一个函数内部的this的值 实现call Function.prototype.call2 = function(context, ...args) { context = (context === undefined || context === null) ? window : context context.__fn = this let result = context.__fn(...args) delete context.__fn return result }  实现apply Function.prototype.apply2 = function(context, args) { context = (context === undefined || context === null) ? window : context context.__fn = this let result = context.__fn(...args) delete context.__fn return result }  实现bind Function.prototype.bind2 = function(context, .</description>
+      <guid>https://1060146865.github.io/2020/js-bindcallapply/</guid>
+      <description>call、apply、bind作用是改变函数执行时的上下文，简而言之就是改变函数运行时的this指向 实现apply apply接受两个参数，第一个参数是this的指向，第二个参数是函数接受的参数，以数组的形式传入
+改变this指向后原函数会立即执行，且此方法只是临时改变this指向一次
+Function.prototype.apply2 = function(context, args) { context = (context === undefined || context === null) ? window : context context.__fn = this let result = context.__fn(...args) delete context.__fn return result }  实现call call方法的第一个参数也是this的指向，后面传入的是一个参数列表
+跟apply一样，改变this指向后原函数会立即执行，且此方法只是临时改变this指向一次
+Function.prototype.call2 = function(context, ...args) { context = (context === undefined || context === null) ? window : context context.__fn = this let result = context.__fn(...args) delete context.__fn return result }  实现bind bind方法和call很相似，第一参数也是this的指向，后面传入的也是一个参数列表(但是这个参数列表可以分多次传入)</description>
     </item>
     
     <item>
@@ -133,6 +240,37 @@ JavaScript缺陷 http://www.ruanyifeng.com/blog/2011/06/10_design_defects_in_jav
  域名的结构由若干个分量组成，各分量之间用.隔开
 …….三级域名.二级域名.顶级域名  域名等级
  国家顶级域名：cn,us 通用顶级域名：com,net,org,int,edu,gov,mil   </description>
+    </item>
+    
+    <item>
+      <title>让Chrome支持小于12px 的文字</title>
+      <link>https://1060146865.github.io/2019/%E8%AE%A9chrome%E6%94%AF%E6%8C%81%E5%B0%8F%E4%BA%8E12px-%E7%9A%84%E6%96%87%E5%AD%97/</link>
+      <pubDate>Mon, 09 Sep 2019 13:10:40 +0800</pubDate>
+      
+      <guid>https://1060146865.github.io/2019/%E8%AE%A9chrome%E6%94%AF%E6%8C%81%E5%B0%8F%E4%BA%8E12px-%E7%9A%84%E6%96%87%E5%AD%97/</guid>
+      <description>背景 Chrome 中文版浏览器会默认设定页面的最小字号是12px，英文版没有限制
+原由 Chrome 团队认为汉字小于12px就会增加识别难度
+ 中文版浏览器  与网页语言无关，取决于用户在Chrome的设置里（chrome://settings/languages）把哪种语言设置为默认显示语言
+ 系统级最小字号  浏览器默认设定页面的最小字号，用户可以前往 chrome://settings/fonts 根据需求更改
+而我们在实际项目中，不能奢求用户更改浏览器设置
+对于文本需要以更小的字号来显示，就需要用到一些小技巧
+解决方案 常见的解决方案有： zoom
+-webkit-transform:scale()
+-webkit-text-size-adjust:none
+Zoom zoom 的字面意思是“变焦”，可以改变页面上元素的尺寸，属于真实尺寸
+其支持的值类型有：
+zoom:50%，表示缩小到原来的一半
+zoom:0.5，表示缩小到原来的一半
+使用 zoom 来”支持“ 12px 以下的字体
+代码如下：
+&amp;lt;style type=&amp;quot;text/css&amp;quot;&amp;gt; .span1{ font-size: 12px; display: inline-block; zoom: 0.8; } .span2{ display: inline-block; font-size: 12px; } &amp;lt;/style&amp;gt; &amp;lt;body&amp;gt; &amp;lt;span class=&amp;quot;span1&amp;quot;&amp;gt;测试10px&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;span2&amp;quot;&amp;gt;测试12px&amp;lt;/span&amp;gt; &amp;lt;/body&amp;gt;  效果如下：
+需要注意的是，Zoom 并不是标准属性，需要考虑其兼容性
+image.png
+#-webkit-transform:scale()
+针对chrome浏览器,加webkit前缀，用transform:scale()这个属性进行放缩
+注意的是，使用scale属性只对可以定义宽高的元素生效，所以，下面代码中将span元素转为行内块元素
+实现代码如下：
+&amp;lt;style type=&amp;quot;text/css&amp;quot;&amp;gt; .</description>
     </item>
     
     <item>

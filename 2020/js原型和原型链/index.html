@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="赵凯">
+  
+  
+  
+  <link rel="prev" href="https://1060146865.github.io/2020/js%E9%97%AD%E5%8C%85%E6%98%AF%E4%BB%80%E4%B9%88%E9%97%AD%E5%8C%85%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF-copy/" />
+  <link rel="next" href="https://1060146865.github.io/2020/js-this/" />
+  <link rel="canonical" href="https://1060146865.github.io/2020/js%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           JS原型和原型链 | 赵凯的博客
+       
+  </title>
+  <meta name="title" content="JS原型和原型链 | 赵凯的博客">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/1060146865.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "JS原型和原型链",
+    "headline" : "JS原型和原型链",
+    "description" : "原型 JavaScript 常被描述为一种基于原型的语言——每个对象拥有一个原型对象\n当试图访问一个对象的属性时，它不仅仅在该对象上搜寻，还会搜寻该对象的原型，以及该对象的原型的原型，依次层层向上搜索，直到找到一个名字匹配的属性或到达原型链的末尾\n准确地说，这些属性和方法定义在Object的构造器函数（constructor functions）之上的prototype属性上，而非实例对象本身\n下面举个例子：\n函数可以有属性。 每个函数都有一个特殊的属性叫作原型prototype\nfunction doSomething(){} console.log( doSomething.prototype ); \/\/控制台输出 { constructor: ƒ doSomething(), __proto__: { constructor: ƒ Object(), hasOwnProperty: ƒ hasOwnProperty(), isPrototypeOf: ƒ isPrototypeOf(), propertyIsEnumerable: ƒ propertyIsEnumerable(), toLocaleString: ƒ toLocaleString(), toString: ƒ toString(), valueOf: ƒ valueOf() } }  上面这个对象，就是大家常说的原型对象\n可以看到，原型对象有一个自有属性constructor，这个属性指向该函数，如下图关系展示\n原型链 原型对象也可能拥有原型，并从中继承方法和属性，一层一层、以此类推。这种关系常被称为原型链 (prototype chain)，它解释了为何一个对象会拥有定义在其他对象中的属性和方法\n在对象实例和它的构造器之间建立一个链接（它是proto属性，是从构造函数的prototype属性派生的），之后通过上溯原型链，在构造器中找到这些属性和方法\n下面举个例子：\nfunction Person(name) { this.name = name; this.age = 18; this.sayName = function() { console.log(this.name); } } \/\/ 第二步 创建实例 var person = new Person(\x27person\x27)  根据代码，我们可以得到下图",
+    "inLanguage" : "zh-ch",
+    "author" : "赵凯",
+    "creator" : "赵凯",
+    "publisher": "赵凯",
+    "accountablePerson" : "赵凯",
+    "copyrightHolder" : "赵凯",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-08-10 16:33:29 \x2b0800 CST",
+    "dateModified" : "2020-08-10 16:33:29 \x2b0800 CST",
+    "url" : "https:\/\/1060146865.github.io\/2020\/js%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE\/",
+    "wordCount" : "137",
+    "keywords" : [  "赵凯的博客"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://1060146865.github.io">赵凯的博客</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://1060146865.github.io">赵凯的博客</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">JS原型和原型链</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://1060146865.github.io" rel="author">赵凯</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-08-10 itemprop="datePublished">August 10, 2020</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<h1 id="原型">原型</h1>
+
+<p>JavaScript 常被描述为一种基于原型的语言——每个对象拥有一个原型对象</p>
+
+<p>当试图访问一个对象的属性时，它不仅仅在该对象上搜寻，还会搜寻该对象的原型，以及该对象的原型的原型，依次层层向上搜索，直到找到一个名字匹配的属性或到达原型链的末尾</p>
+
+<p>准确地说，这些属性和方法定义在Object的构造器函数（constructor functions）之上的prototype属性上，而非实例对象本身</p>
+
+<p>下面举个例子：</p>
+
+<p>函数可以有属性。 每个函数都有一个特殊的属性叫作原型prototype</p>
+
+<pre><code class="language-javascript">function doSomething(){}
+console.log( doSomething.prototype );
+
+
+//控制台输出
+
+{
+    constructor: ƒ doSomething(),
+    __proto__: {
+        constructor: ƒ Object(),
+        hasOwnProperty: ƒ hasOwnProperty(),
+        isPrototypeOf: ƒ isPrototypeOf(),
+        propertyIsEnumerable: ƒ propertyIsEnumerable(),
+        toLocaleString: ƒ toLocaleString(),
+        toString: ƒ toString(),
+        valueOf: ƒ valueOf()
+    }
+}
+
+</code></pre>
+
+<p>上面这个对象，就是大家常说的原型对象</p>
+
+<p>可以看到，原型对象有一个自有属性constructor，这个属性指向该函数，如下图关系展示</p>
+
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a24cbdac-86d9-4b0a-b76a-ffd47ba57ff3/afe488ee-b7f0-42c2-bb95-2c512ea8dc8e.png" alt="avatar" class="lazyload"><figcaption class="image-caption">avatar</figcaption></figure></p>
+
+<h3 id="原型链">原型链</h3>
+
+<p>原型对象也可能拥有原型，并从中继承方法和属性，一层一层、以此类推。这种关系常被称为原型链 (prototype chain)，它解释了为何一个对象会拥有定义在其他对象中的属性和方法</p>
+
+<p>在对象实例和它的构造器之间建立一个链接（它是<strong>proto</strong>属性，是从构造函数的prototype属性派生的），之后通过上溯原型链，在构造器中找到这些属性和方法</p>
+
+<p>下面举个例子：</p>
+
+<pre><code class="language-javascript">function Person(name) {
+    this.name = name;
+    this.age = 18;
+    this.sayName = function() {
+        console.log(this.name);
+    }
+}
+// 第二步 创建实例
+var person = new Person('person')
+
+</code></pre>
+
+<p>根据代码，我们可以得到下图</p>
+
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a24cbdac-86d9-4b0a-b76a-ffd47ba57ff3/7d07de23-aa92-4158-889e-8713b6f343bf.png" alt="avatar" class="lazyload"><figcaption class="image-caption">avatar</figcaption></figure></p>
+
+<p>下面分析一下：</p>
+
+<ul>
+<li><p>构造函数Person存在原型对象Person.prototype</p></li>
+
+<li><p>构造函数生成实例对象person，person的<strong>proto</strong>指向构造函数Person原型对象</p></li>
+
+<li><p>Person.prototype.<strong>proto</strong> 指向内置对象，因为 Person.prototype 是个对象，默认是由 Object函数作为类创建的，而 Object.prototype 为内置对象</p></li>
+
+<li><p>Person.<strong>proto</strong> 指向内置匿名函数 anonymous，因为 Person 是个函数对象，默认由 Function 作为类创建</p></li>
+
+<li><p>Function.prototype 和 Function.<strong>proto</strong>同时指向内置匿名函数 anonymous，这样原型链的终点就是 null</p></li>
+</ul>
+
+<h3 id="总结">总结</h3>
+
+<p>下面首先要看几个概念：</p>
+
+<p><strong>proto</strong>作为不同对象之间的桥梁，用来指向创建它的构造函数的原型对象的</p>
+
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a24cbdac-86d9-4b0a-b76a-ffd47ba57ff3/2eccc2a4-f202-4793-b506-9f4b4acd7247.png" alt="avatar" class="lazyload"><figcaption class="image-caption">avatar</figcaption></figure></p>
+
+<p>每个对象的<strong>proto</strong>都是指向它的构造函数的原型对象prototype的</p>
+
+<pre><code>person1.__proto__ === Person.prototype
+</code></pre>
+
+<p>构造函数是一个函数对象，是通过 Function构造器产生的</p>
+
+<pre><code>Person.__proto__ === Function.prototype
+</code></pre>
+
+<p>原型对象本身是一个普通对象，而普通对象的构造函数都是Object</p>
+
+<pre><code>Person.prototype.__proto__ === Object.prototype
+</code></pre>
+
+<p>刚刚上面说了，所有的构造器都是函数对象，函数对象都是 Function构造产生的</p>
+
+<pre><code>Object.__proto__ === Function.prototype
+</code></pre>
+
+<p>Object的原型对象也有<strong>proto</strong>属性指向null，null是原型链的顶端</p>
+
+<pre><code>Object.prototype.__proto__ === null
+</code></pre>
+
+<p>下面作出总结：</p>
+
+<p>一切对象都是继承自Object对象，Object 对象直接继承根源对象null</p>
+
+<p>一切的函数对象（包括 Object 对象），都是继承自 Function 对象</p>
+
+<p>Object 对象直接继承自 Function 对象</p>
+
+<p>Function对象的<strong>proto</strong>会指向自己的原型对象，最终还是继承自Object对象</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>赵凯 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://1060146865.github.io/2020/js%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/>https://1060146865.github.io/2020/js%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://1060146865.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://1060146865.github.io/2020/js%E9%97%AD%E5%8C%85%E6%98%AF%E4%BB%80%E4%B9%88%E9%97%AD%E5%8C%85%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF-copy/" class="prev" rel="prev" title="JS 闭包是什么？闭包的使用场景？"><i class="iconfont icon-left"></i>&nbsp;JS 闭包是什么？闭包的使用场景？</a>
+         
+        
+        <a href="https://1060146865.github.io/2020/js-this/" class="next" rel="next" title="JS this">JS this&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2021</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://1060146865.github.io">赵凯</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

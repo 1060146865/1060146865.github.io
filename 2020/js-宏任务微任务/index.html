@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="赵凯">
+  
+  
+  
+  <link rel="prev" href="https://1060146865.github.io/2020/js-this/" />
+  <link rel="next" href="https://1060146865.github.io/2020/js%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/" />
+  <link rel="canonical" href="https://1060146865.github.io/2020/js-%E5%AE%8F%E4%BB%BB%E5%8A%A1%E5%BE%AE%E4%BB%BB%E5%8A%A1/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           JS 宏任务微任务 | 赵凯的博客
+       
+  </title>
+  <meta name="title" content="JS 宏任务微任务 | 赵凯的博客">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/1060146865.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "JS 宏任务微任务",
+    "headline" : "JS 宏任务微任务",
+    "description" : "JS是单线程执行 \x26ldquo;JS是单线程的\x26rdquo;指的是JS 引擎线程。\n在浏览器环境中，有JS 引擎线程和渲染线程，且两个线程互斥。\nNode环境中，只有JS 线程。\n宿主 JS运行的环境。一般为浏览器或者Node。\n执行栈 是一个存储函数调用的栈结构，遵循先进后出的原则。\njs是单线程的 只有一个调用栈 调用栈按照先入后出的规则进行 在执行调用栈的时候会先执行同步任务, 调用栈在发现异步任务的时候会把异步任务放到队列里面,异步任务列为宏任务队列和微任务队列,队列都按照先入先出的规则\n事件循环是一个不断循环的机制,不断的去寻找可执行任务来执行,在执行完同步任务以后,会先执行微任务队列的任务,把微任务队列的任务清空以后才会去执行宏任务,这个时候浏览器可能会渲染,渲染以后再去执行宏任务 宏任务settimeout()和setinterval() 微任务Promise.then().catch().finally()\n首先执行宏任务,在调用栈为空的时候,事件循环优先于执行微任务,清空微任务队列才会看一下需不需要渲染,渲染以后事件循环再执行下一轮宏任务,如果此时宏任务的其中一轮结束后,也就是调用栈清空的时候,事件循环又发现微任务,还会执行微任务,并且清空微任务队列才会看下需不需要渲染,渲染之后事件循环在此执行下一轮宏任务,在没有其余微任务的时候,宏任务就可以一直清空宏任务队列了",
+    "inLanguage" : "zh-ch",
+    "author" : "赵凯",
+    "creator" : "赵凯",
+    "publisher": "赵凯",
+    "accountablePerson" : "赵凯",
+    "copyrightHolder" : "赵凯",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-08-14 13:23:29 \x2b0800 CST",
+    "dateModified" : "2020-08-14 13:23:29 \x2b0800 CST",
+    "url" : "https:\/\/1060146865.github.io\/2020\/js-%E5%AE%8F%E4%BB%BB%E5%8A%A1%E5%BE%AE%E4%BB%BB%E5%8A%A1\/",
+    "wordCount" : "20",
+    "keywords" : [  "赵凯的博客"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://1060146865.github.io">赵凯的博客</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://1060146865.github.io">赵凯的博客</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">JS 宏任务微任务</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://1060146865.github.io" rel="author">赵凯</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-08-14 itemprop="datePublished">August 14, 2020</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<h3 id="js是单线程执行">JS是单线程执行</h3>
+
+<p>&ldquo;JS是单线程的&rdquo;指的是JS 引擎线程。</p>
+
+<p>在浏览器环境中，有JS 引擎线程和渲染线程，且两个线程互斥。</p>
+
+<p>Node环境中，只有JS 线程。</p>
+
+<h3 id="宿主">宿主</h3>
+
+<p>JS运行的环境。一般为浏览器或者Node。</p>
+
+<h3 id="执行栈">执行栈</h3>
+
+<p>是一个存储函数调用的栈结构，遵循先进后出的原则。</p>
+
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a24cbdac-86d9-4b0a-b76a-ffd47ba57ff3/00e6366c-7a77-441a-8ba9-0e842b5e3be8.png" alt="avatar" class="lazyload"><figcaption class="image-caption">avatar</figcaption></figure></p>
+
+<p>js是单线程的 只有一个调用栈 调用栈按照先入后出的规则进行 在执行调用栈的时候会先执行同步任务, 调用栈在发现异步任务的时候会把异步任务放到队列里面,异步任务列为宏任务队列和微任务队列,队列都按照先入先出的规则</p>
+
+<p>事件循环是一个不断循环的机制,不断的去寻找可执行任务来执行,在执行完同步任务以后,会先执行微任务队列的任务,把微任务队列的任务清空以后才会去执行宏任务,这个时候浏览器可能会渲染,渲染以后再去执行宏任务
+宏任务settimeout()和setinterval()    微任务Promise.then().catch().finally()</p>
+
+<p>首先执行宏任务,在调用栈为空的时候,事件循环优先于执行微任务,清空微任务队列才会看一下需不需要渲染,渲染以后事件循环再执行下一轮宏任务,如果此时宏任务的其中一轮结束后,也就是调用栈清空的时候,事件循环又发现微任务,还会执行微任务,并且清空微任务队列才会看下需不需要渲染,渲染之后事件循环在此执行下一轮宏任务,在没有其余微任务的时候,宏任务就可以一直清空宏任务队列了</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>赵凯 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://1060146865.github.io/2020/js-%E5%AE%8F%E4%BB%BB%E5%8A%A1%E5%BE%AE%E4%BB%BB%E5%8A%A1/>https://1060146865.github.io/2020/js-%E5%AE%8F%E4%BB%BB%E5%8A%A1%E5%BE%AE%E4%BB%BB%E5%8A%A1/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://1060146865.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://1060146865.github.io/2020/js-this/" class="prev" rel="prev" title="JS this"><i class="iconfont icon-left"></i>&nbsp;JS this</a>
+         
+        
+        <a href="https://1060146865.github.io/2020/js%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/" class="next" rel="next" title="JS 防抖和节流">JS 防抖和节流&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2021</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://1060146865.github.io">赵凯</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

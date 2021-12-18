@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="赵凯">
+  
+  
+  
+  <link rel="prev" href="https://1060146865.github.io/2020/js-bindcallapply/" />
+  <link rel="next" href="https://1060146865.github.io/2020/js%E9%97%AD%E5%8C%85%E6%98%AF%E4%BB%80%E4%B9%88%E9%97%AD%E5%8C%85%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF-copy/" />
+  <link rel="canonical" href="https://1060146865.github.io/2020/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%B5%85%E6%8B%B7%E8%B4%9D%E7%9A%84%E5%8C%BA%E5%88%AB%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E6%B7%B1%E6%8B%B7%E8%B4%9D/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           JS 深拷贝浅拷贝的区别？如何实现一个深拷贝？ | 赵凯的博客
+       
+  </title>
+  <meta name="title" content="JS 深拷贝浅拷贝的区别？如何实现一个深拷贝？ | 赵凯的博客">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/1060146865.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "JS 深拷贝浅拷贝的区别？如何实现一个深拷贝？",
+    "headline" : "JS 深拷贝浅拷贝的区别？如何实现一个深拷贝？",
+    "description" : "JavaScript中存在两大数据类型： 基本类型 引用类型\n基本类型数据保存在在栈内存中\n引用类型数据保存在堆内存中，引用数据类型的变量是一个指向堆内存中实际对象的引用，存在栈中\n浅拷贝与深拷贝 浅拷贝，指的是创建新的数据，这个数据有着原始数据属性值的一份精确拷贝。如果属性是基本类型，拷贝的就是基本类型的值。如果属性是引用类型，拷贝的就是内存地址\n即浅拷贝是拷贝一层，深层次的引用类型则共享内存地址，所以如果其中一个对象改变了这个地址，就会影响到另一个对象。\n深拷贝是将一个对象从内存中完整的拷贝一份出来,从堆内存中开辟一个新的区域存放新对象,且修改新对象不会影响原对象。\n赋值和深\/浅拷贝的区别 这三者的区别如下，不过比较的前提都是针对引用类型：\n 当我们把一个对象赋值给一个新的变量时，赋的其实是该对象的在栈中的地址，而不是堆中的数据。也就是两个对象指向的是同一个存储空间，无论哪个对象发生改变，其实都是改变的存储空间的内容，因此，两个对象是联动的。 浅拷贝：重新在堆中创建内存，拷贝前后对象的基本数据类型互不影响，但拷贝前后对象的引用类型因共享同一块内存，会相互影响。 深拷贝：从堆内存中开辟一个新的区域存放新对象，对对象中的子对象进行递归拷贝,拷贝前后的两个对象互不影响。  浅拷贝 下面简单实现一个浅拷贝\nfunction shallowClone(obj) { const newObj = {}; for(let prop in obj) { if(obj.hasOwnProperty(prop)){ newObj[prop] = obj[prop]; } } return newObj; }  在JavaScript中，存在浅拷贝的现象有：\nObject.assign Array.prototype.slice(), Array.prototype.concat() 使用拓展运算符实现的复制 #Object.assign\nvar obj = { age: 18, nature: [\x27smart\x27, \x27good\x27], names: { name1: \x27fx\x27, name2: \x27xka\x27 }, love: function () { console.log(\x27fx is a great girl\x27) } } var newObj = Object.",
+    "inLanguage" : "zh-ch",
+    "author" : "赵凯",
+    "creator" : "赵凯",
+    "publisher": "赵凯",
+    "accountablePerson" : "赵凯",
+    "copyrightHolder" : "赵凯",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-08-03 11:24:29 \x2b0800 CST",
+    "dateModified" : "2020-08-03 11:24:29 \x2b0800 CST",
+    "url" : "https:\/\/1060146865.github.io\/2020\/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%B5%85%E6%8B%B7%E8%B4%9D%E7%9A%84%E5%8C%BA%E5%88%AB%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E6%B7%B1%E6%8B%B7%E8%B4%9D\/",
+    "wordCount" : "326",
+    "keywords" : [  "赵凯的博客"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://1060146865.github.io">赵凯的博客</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://1060146865.github.io">赵凯的博客</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">JS 深拷贝浅拷贝的区别？如何实现一个深拷贝？</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://1060146865.github.io" rel="author">赵凯</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-08-03 itemprop="datePublished">August 3, 2020</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<h1 id="javascript中存在两大数据类型">JavaScript中存在两大数据类型：</h1>
+
+<p>基本类型
+引用类型</p>
+
+<p>基本类型数据保存在在栈内存中</p>
+
+<p>引用类型数据保存在堆内存中，引用数据类型的变量是一个指向堆内存中实际对象的引用，存在栈中</p>
+
+<h3 id="浅拷贝与深拷贝">浅拷贝与深拷贝</h3>
+
+<p>浅拷贝，指的是创建新的数据，这个数据有着原始数据属性值的一份精确拷贝。如果属性是基本类型，拷贝的就是基本类型的值。如果属性是引用类型，拷贝的就是内存地址</p>
+
+<p>即浅拷贝是拷贝一层，深层次的引用类型则共享内存地址，所以如果其中一个对象改变了这个地址，就会影响到另一个对象。</p>
+
+<p>深拷贝是将一个对象从内存中完整的拷贝一份出来,从堆内存中开辟一个新的区域存放新对象,且修改新对象不会影响原对象。</p>
+
+<h3 id="赋值和深-浅拷贝的区别">赋值和深/浅拷贝的区别</h3>
+
+<p>这三者的区别如下，不过比较的前提都是针对引用类型：</p>
+
+<ul>
+<li>当我们把一个对象赋值给一个新的变量时，赋的其实是该对象的在栈中的地址，而不是堆中的数据。也就是两个对象指向的是同一个存储空间，无论哪个对象发生改变，其实都是改变的存储空间的内容，因此，两个对象是联动的。</li>
+<li>浅拷贝：重新在堆中创建内存，拷贝前后对象的基本数据类型互不影响，但拷贝前后对象的引用类型因共享同一块内存，会相互影响。</li>
+<li>深拷贝：从堆内存中开辟一个新的区域存放新对象，对对象中的子对象进行递归拷贝,拷贝前后的两个对象互不影响。</li>
+</ul>
+
+<h3 id="浅拷贝">浅拷贝</h3>
+
+<p>下面简单实现一个浅拷贝</p>
+
+<pre><code class="language-javascript">function shallowClone(obj) {
+    const newObj = {};
+    for(let prop in obj) {
+        if(obj.hasOwnProperty(prop)){
+            newObj[prop] = obj[prop];
+        }
+    }
+    return newObj;
+}
+
+</code></pre>
+
+<p>在JavaScript中，存在浅拷贝的现象有：</p>
+
+<p>Object.assign
+Array.prototype.slice(), Array.prototype.concat()
+使用拓展运算符实现的复制
+#Object.assign</p>
+
+<pre><code class="language-javascript">var obj = {
+    age: 18,
+    nature: ['smart', 'good'],
+    names: {
+        name1: 'fx',
+        name2: 'xka'
+    },
+    love: function () {
+        console.log('fx is a great girl')
+    }
+}
+var newObj = Object.assign({}, fxObj);
+</code></pre>
+
+<p>slice()</p>
+
+<pre><code class="language-javascript">const fxArr = [&quot;One&quot;, &quot;Two&quot;, &quot;Three&quot;]
+const fxArrs = fxArr.slice(0)
+fxArrs[1] = &quot;love&quot;;
+console.log(fxArr) // [&quot;One&quot;, &quot;Two&quot;, &quot;Three&quot;]
+console.log(fxArrs) // [&quot;One&quot;, &quot;love&quot;, &quot;Three&quot;]
+</code></pre>
+
+<p>concat()</p>
+
+<pre><code class="language-javascript">const fxArr = [&quot;One&quot;, &quot;Two&quot;, &quot;Three&quot;]
+const fxArrs = fxArr.concat()
+fxArrs[1] = &quot;love&quot;;
+console.log(fxArr) // [&quot;One&quot;, &quot;Two&quot;, &quot;Three&quot;]
+console.log(fxArrs) // [&quot;One&quot;, &quot;love&quot;, &quot;Three&quot;]
+</code></pre>
+
+<p>拓展运算符</p>
+
+<pre><code class="language-javascript">const fxArr = [&quot;One&quot;, &quot;Two&quot;, &quot;Three&quot;]
+const fxArrs = [...fxArr]
+fxArrs[1] = &quot;love&quot;;
+console.log(fxArr) // [&quot;One&quot;, &quot;Two&quot;, &quot;Three&quot;]
+console.log(fxArrs) // [&quot;One&quot;, &quot;love&quot;, &quot;Three&quot;]
+</code></pre>
+
+<h3 id="深拷贝">深拷贝</h3>
+
+<p>常见的深拷贝方式有：</p>
+
+<p>_.cloneDeep()</p>
+
+<p>jQuery.extend()</p>
+
+<p>JSON.stringify()</p>
+
+<p>手写循环递归</p>
+
+<p>#_.cloneDeep()</p>
+
+<pre><code class="language-javascript">const _ = require('lodash');
+const obj1 = {
+    a: 1,
+    b: { f: { g: 1 } },
+    c: [1, 2, 3]
+};
+const obj2 = _.cloneDeep(obj1);
+console.log(obj1.b.f === obj2.b.f);// false
+</code></pre>
+
+<p>jQuery.extend()</p>
+
+<pre><code class="language-javascript">const $ = require('jquery');
+const obj1 = {
+    a: 1,
+    b: { f: { g: 1 } },
+    c: [1, 2, 3]
+};
+const obj2 = $.extend(true, {}, obj1);
+console.log(obj1.b.f === obj2.b.f); // false
+</code></pre>
+
+<p>JSON.stringify()</p>
+
+<pre><code class="language-javascript">const obj2=JSON.parse(JSON.stringify(obj1));
+</code></pre>
+
+<h3 id="但是这种方式存在弊端-会忽略undefined-symbol和函数">但是这种方式存在弊端，会忽略undefined、symbol和函数</h3>
+
+<pre><code class="language-javascript">const obj = {
+    name: 'A',
+    name1: undefined,
+    name3: function() {},
+    name4:  Symbol('A')
+}
+const obj2 = JSON.parse(JSON.stringify(obj));
+console.log(obj2); // {name: &quot;A&quot;}
+</code></pre>
+
+<h3 id="循环递归">循环递归</h3>
+
+<pre><code class="language-javascript">function deepClone(obj, hash = new WeakMap()) {
+  if (obj === null) return obj; // 如果是null或者undefined我就不进行拷贝操作
+  if (obj instanceof Date) return new Date(obj);
+  if (obj instanceof RegExp) return new RegExp(obj);
+  // 可能是对象或者普通的值  如果是函数的话是不需要深拷贝
+  if (typeof obj !== &quot;object&quot;) return obj;
+  // 是对象的话就要进行深拷贝
+  if (hash.get(obj)) return hash.get(obj);
+  let cloneObj = new obj.constructor();
+  // 找到的是所属类原型上的constructor,而原型上的 constructor指向的是当前类本身
+  hash.set(obj, cloneObj);
+  for (let key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      // 实现一个递归拷贝
+      cloneObj[key] = deepClone(obj[key], hash);
+    }
+  }
+  return cloneObj;
+}
+</code></pre>
+
+<h3 id="小结">小结</h3>
+
+<p>前提为拷贝类型为引用类型的情况下：</p>
+
+<p>浅拷贝是拷贝一层，属性为对象时，浅拷贝是复制，两个对象指向同一个地址</p>
+
+<p>深拷贝是递归拷贝深层次，属性为对象时，深拷贝是新开栈，两个对象指向不同的地址</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>赵凯 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://1060146865.github.io/2020/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%B5%85%E6%8B%B7%E8%B4%9D%E7%9A%84%E5%8C%BA%E5%88%AB%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E6%B7%B1%E6%8B%B7%E8%B4%9D/>https://1060146865.github.io/2020/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%B5%85%E6%8B%B7%E8%B4%9D%E7%9A%84%E5%8C%BA%E5%88%AB%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E6%B7%B1%E6%8B%B7%E8%B4%9D/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://1060146865.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://1060146865.github.io/2020/js-bindcallapply/" class="prev" rel="prev" title="JS bind、call、apply"><i class="iconfont icon-left"></i>&nbsp;JS bind、call、apply</a>
+         
+        
+        <a href="https://1060146865.github.io/2020/js%E9%97%AD%E5%8C%85%E6%98%AF%E4%BB%80%E4%B9%88%E9%97%AD%E5%8C%85%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF-copy/" class="next" rel="next" title="JS 闭包是什么？闭包的使用场景？">JS 闭包是什么？闭包的使用场景？&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2021</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://1060146865.github.io">赵凯</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
